@@ -108,7 +108,7 @@ def totalmatchRate(tree, testset):
 		total += matchRate(predict_, label)
 	return total / len(testset)
 
-def binaryHashModel():
+def binaryHash():
 	dataset = loadCSV("binarytrain.csv")
 	dataset.pop(0)
 	intDataset = [(list(map(int, group))) for group in dataset]
@@ -119,7 +119,7 @@ def binaryHashModel():
 	tree = buildTree(intDataset, 30, 0)
 	print(totalmatchRate(tree, testset))
 
-def multipleTreeModel():
+def multipleTree():
 	dataset = loadCSV("preprocesstrain.csv")
 	dataset.pop(0)
 	intDataset = [(list(map(int, group))) for group in dataset]
