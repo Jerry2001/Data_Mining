@@ -21,7 +21,7 @@ testingIndex = []
 testingSet = []
 
 for index, label in enumerate(binLabel):
-	if(binLabel.count(label) > 3 and label not in set(testingSet)):
+	if(binLabel.count(label) > 1 and label not in set(testingSet)):
 		testingIndex.append(index)
 		testingSet.append(label)
 
@@ -32,14 +32,16 @@ for index, label in enumerate(binLabel):
 
 mainDF = pd.read_csv("dataset.csv", delimiter=";", skiprows = 1) 
 mainDF = mainDF.drop(columns = ['ID', 'Motorway'])
-mainDF.to_csv('preprocess.csv', index = False)
+
 binCSV  = mainDF.iloc[:, 0:14]
 binCSV["label"] = binLabel
 
 mask = [(i in testingIndex) for i in range(189)]
 
+(mainDF.loc[mask]).to_csv('preprocesstest.csv', index = False)
 (binCSV.loc[mask]).to_csv('binarytest.csv', index = False)
 
 mask = [(i not in testingIndex) for i in range(189)]
 
+(mainDF.loc[mask]).to_csv('preprocesstrain.csv', index = False)
 (binCSV.loc[mask]).to_csv('binarytrain.csv', index = False)
