@@ -21,7 +21,7 @@ testingIndex = []
 testingSet = []
 
 for index, label in enumerate(binLabel):
-	if(label not in set(testingSet)):
+	if(binLabel.count(label) > 3 and label not in set(testingSet)):
 		testingIndex.append(index)
 		testingSet.append(label)
 
