@@ -1,11 +1,20 @@
 from csv import reader
 import pandas as pd
 
+stdin = open('BinaryHashDecisionTree.txt', 'w')#open('ManyDecisionTree.txt', 'w')
+
+
 def loadCSV(filename):
 	file = open(filename, "rt")
 	lines = reader(file)
 	dataset = list(lines)
 	return dataset
+
+label = ["Water Reservoir Surface", "Number of Reservoir", "Type of Reservoir", "Presence of Vegetation", "The Most Dominant Land Type"
+, "The Second Most Dominant Land Type", "The Third Most Dominant Land Type", "Use of Water Reservoir", "Presence of Fishing", "Precentage Access to Undeveloped Area"
+, "Minimum Distance to Road", "Minimum Distance to Building", "Maintenance Status of Reservoir", "Type of Shore"]
+
+group = ("Green frog", "Brown frog", "Common toad", "Fire-bellied toad", "Tree frog", "Common newt", "Great crested newt")
 
 def toTerminal(group):
 	outcomes = [row[-1] for row in group]
@@ -67,7 +76,10 @@ def getSplit(dataset):
 			#print('X%d < %.3f Gini=%.3f' % ((index+1), row[index], gini))
 			if gini < bScore:
 				bIndex, bValue, bScore, bGroups = index, row[index], gini, groups
-	return {'index': bIndex, 'value': bValue, 'groups':bGroups}
+	instance = 0
+	for group in bGroups:
+		instance += len(group)
+	return {'index': bIndex, 'value': bValue, 'groups':bGroups, 'gini' : bScore, 'instance': instance}
 
 def buildTree(train, maxDepth, minSize):
 	root = getSplit(train)
@@ -75,12 +87,13 @@ def buildTree(train, maxDepth, minSize):
 	return root
 
 def printTree(node, depth=0):
+	global label
 	if isinstance(node, dict):
-		print('%s[X%d < %.3f]' % (depth*' ', (node['index'] + 1), node['value']))
+		print('%s%s < %.3f | Gini:%.3f | Instance:%d' % (depth*'|'+'--', label[node['index']], node['value'], node['gini'], node['instance']), file = stdin)
 		printTree(node['left'], depth + 1)
 		printTree(node['right'], depth + 1)
 	else: 
-		print('%s[%s]' % (depth * ' ', node))
+		print('%s[%s]' % (depth*'|'+'--', node), file = stdin)
  
 def predict(tree, sample):
  	if(int(sample[tree['index']]) < tree['value']):
@@ -117,7 +130,8 @@ def binaryHash():
 	testset.pop(0)
 
 	tree = buildTree(intDataset, 30, 0)
-	print(totalmatchRate(tree, testset))
+	printTree(tree)
+	print('Final Accuracy %.3f' % totalmatchRate(tree, testset), file = stdin)
 
 def multipleTree():
 	dataset = loadCSV("preprocesstrain.csv")
@@ -127,13 +141,16 @@ def multipleTree():
 	testset.pop(0)
 	sumMatchRate = 0
 	for i in range(-7, 0):
+		print('Decision Tree for %s' % group[i], file = stdin)
 		trainSpeciesSet = [(group[0:14]) + [group[i]] for group in intDataset]
 		testSpeciesSet = [(group[0:14]) + [group[i]] for group in testset]
-		tree = buildTree(trainSpeciesSet, 30, 0)
+		tree = buildTree(trainSpeciesSet, 10, 0)
 		sumMatchRate += totalmatchRate(tree, testSpeciesSet)
-		print(totalmatchRate(tree, testSpeciesSet))
-	print(sumMatchRate / 7)
+		printTree(tree)
+		print('Accuracy %.3f' % totalmatchRate(tree, testSpeciesSet), file = stdin)
+		print(file = stdin)
+	print('Final Accuracy %.3f' % (sumMatchRate / 7), file = stdin)
+	print(file = stdin)
 
-#binaryHashModel()
-
-multipleTree()
+binaryHash()
+#multipleTree()
