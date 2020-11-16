@@ -131,9 +131,9 @@ def multipleTree():
 		testSpeciesSet = [(group[0:14]) + [group[i]] for group in testset]
 		tree = buildTree(trainSpeciesSet, 30, 0)
 		sumMatchRate += totalmatchRate(tree, testSpeciesSet)
-		#print(totalmatchRate(tree, testSpeciesSet))
+		print(totalmatchRate(tree, testSpeciesSet))
 	print(sumMatchRate / 7)
 
-binaryHashModel()
+#binaryHashModel()
 
-multipleTreeModel()
+multipleTree()
