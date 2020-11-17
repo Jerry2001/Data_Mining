@@ -129,7 +129,7 @@ def binaryHash():
 	testset = loadCSV("binarytest.csv")
 	testset.pop(0)
 
-	tree = buildTree(intDataset, 30, 0)
+	tree = buildTree(intDataset, 5, 0)
 	printTree(tree)
 	print('Final Accuracy %.3f' % totalmatchRate(tree, testset), file = stdin)
 
@@ -144,7 +144,7 @@ def multipleTree():
 		print('Decision Tree for %s' % group[i], file = stdin)
 		trainSpeciesSet = [(group[0:14]) + [group[i]] for group in intDataset]
 		testSpeciesSet = [(group[0:14]) + [group[i]] for group in testset]
-		tree = buildTree(trainSpeciesSet, 10, 0)
+		tree = buildTree(trainSpeciesSet, 5, 0)
 		sumMatchRate += totalmatchRate(tree, testSpeciesSet)
 		printTree(tree)
 		print('Accuracy %.3f' % totalmatchRate(tree, testSpeciesSet), file = stdin)
