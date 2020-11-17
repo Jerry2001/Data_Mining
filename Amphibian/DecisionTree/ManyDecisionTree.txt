@@ -1,0 +1,1104 @@
+Decision Tree for Green frog
+--Type of Reservoir < 12.000 | Gini:0.346 | Instance:126
+|--Water Reservoir Surface < 1400.000 | Gini:0.313 | Instance:86
+||--Water Reservoir Surface < 1100.000 | Gini:0.416 | Instance:39
+|||--Minimum Distance to Building < 1.000 | Gini:0.393 | Instance:37
+||||--The Third Most Dominant Land Type < 10.000 | Gini:0.222 | Instance:6
+|||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:3
+||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:2
+|||||||--[1]
+|||||||--[1]
+|||||--Water Reservoir Surface < 400.000 | Gini:0.000 | Instance:3
+||||||--Water Reservoir Surface < 50.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+||||||--Water Reservoir Surface < 400.000 | Gini:0.000 | Instance:2
+|||||||--[0]
+|||||||--[0]
+||||--Water Reservoir Surface < 50.000 | Gini:0.346 | Instance:31
+|||||--Water Reservoir Surface < 30.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||||--Presence of Fishing < 4.000 | Gini:0.317 | Instance:30
+||||||--The Most Dominant Land Type < 6.000 | Gini:0.290 | Instance:29
+|||||||--Water Reservoir Surface < 400.000 | Gini:0.367 | Instance:20
+||||||||--The Third Most Dominant Land Type < 2.000 | Gini:0.152 | Instance:12
+|||||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+||||||||||--[0]
+||||||||||--[0]
+|||||||||--Presence of Vegetation < 4.000 | Gini:0.091 | Instance:11
+||||||||||--[1]
+||||||||||--[0]
+||||||||--Presence of Vegetation < 4.000 | Gini:0.333 | Instance:8
+|||||||||--Water Reservoir Surface < 900.000 | Gini:0.333 | Instance:6
+||||||||||--[0]
+||||||||||--[0]
+|||||||||--Water Reservoir Surface < 1000.000 | Gini:0.000 | Instance:2
+||||||||||--[1]
+||||||||||--[1]
+|||||||--Water Reservoir Surface < 450.000 | Gini:0.000 | Instance:9
+||||||||--Water Reservoir Surface < 50.000 | Gini:0.000 | Instance:4
+|||||||||--[1]
+|||||||||--[1]
+||||||||--Water Reservoir Surface < 450.000 | Gini:0.000 | Instance:5
+|||||||||--[1]
+|||||||||--[1]
+||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+|||--Water Reservoir Surface < 1300.000 | Gini:0.000 | Instance:2
+||||--Water Reservoir Surface < 1100.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 1300.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+||--Minimum Distance to Building < 5.000 | Gini:0.150 | Instance:47
+|||--The Most Dominant Land Type < 10.000 | Gini:0.048 | Instance:36
+||||--Water Reservoir Surface < 3800.000 | Gini:0.000 | Instance:29
+|||||--Water Reservoir Surface < 3400.000 | Gini:0.000 | Instance:15
+||||||--Water Reservoir Surface < 2400.000 | Gini:0.000 | Instance:14
+|||||||--Water Reservoir Surface < 1500.000 | Gini:0.000 | Instance:7
+||||||||--[1]
+||||||||--[1]
+|||||||--Water Reservoir Surface < 2400.000 | Gini:0.000 | Instance:7
+||||||||--[1]
+||||||||--[1]
+||||||--Water Reservoir Surface < 3400.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+|||||--Water Reservoir Surface < 3800.000 | Gini:0.000 | Instance:14
+||||||--[1]
+||||||--[1]
+||||--Use of Water Reservoir < 3.000 | Gini:0.000 | Instance:7
+|||||--Water Reservoir Surface < 10000.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 29000.000 | Gini:0.000 | Instance:6
+||||||--Water Reservoir Surface < 1800.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+||||||--Water Reservoir Surface < 29000.000 | Gini:0.000 | Instance:5
+|||||||--[1]
+|||||||--[1]
+|||--Presence of Vegetation < 4.000 | Gini:0.283 | Instance:11
+||||--The Second Most Dominant Land Type < 2.000 | Gini:0.194 | Instance:9
+|||||--Water Reservoir Surface < 3300.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 10050.000 | Gini:0.167 | Instance:8
+||||||--Water Reservoir Surface < 4300.000 | Gini:0.000 | Instance:5
+|||||||--Water Reservoir Surface < 3000.000 | Gini:0.000 | Instance:2
+||||||||--Water Reservoir Surface < 1400.000 | Gini:0.000 | Instance:1
+|||||||||--[1]
+|||||||||--[1]
+||||||||--Water Reservoir Surface < 3000.000 | Gini:0.000 | Instance:1
+|||||||||--[1]
+|||||||||--[1]
+|||||||--Water Reservoir Surface < 4300.000 | Gini:0.000 | Instance:3
+||||||||--[1]
+||||||||--[1]
+||||||--Water Reservoir Surface < 16000.000 | Gini:0.000 | Instance:3
+|||||||--Water Reservoir Surface < 10050.000 | Gini:0.000 | Instance:1
+||||||||--[0]
+||||||||--[0]
+|||||||--Water Reservoir Surface < 30000.000 | Gini:0.000 | Instance:2
+||||||||--Water Reservoir Surface < 16000.000 | Gini:0.000 | Instance:1
+|||||||||--[1]
+|||||||||--[1]
+||||||||--Water Reservoir Surface < 30000.000 | Gini:0.000 | Instance:1
+|||||||||--[1]
+|||||||||--[1]
+||||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:2
+|||||--Water Reservoir Surface < 2000.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|--Minimum Distance to Road < 5.000 | Gini:0.295 | Instance:40
+||--The Most Dominant Land Type < 14.000 | Gini:0.137 | Instance:27
+|||--Presence of Vegetation < 1.000 | Gini:0.112 | Instance:26
+||||--The Most Dominant Land Type < 2.000 | Gini:0.000 | Instance:2
+|||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+||||||--[1]
+||||||--[1]
+||||--The Third Most Dominant Land Type < 2.000 | Gini:0.062 | Instance:24
+|||||--The Second Most Dominant Land Type < 10.000 | Gini:0.000 | Instance:4
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:3
+|||||||--[0]
+|||||||--[0]
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+|||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:20
+||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:19
+|||||||--[0]
+|||||||--[0]
+|||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:1
+||||--[1]
+||||--[1]
+||--The Third Most Dominant Land Type < 10.000 | Gini:0.308 | Instance:13
+|||--Water Reservoir Surface < 500.000 | Gini:0.333 | Instance:9
+||||--Type of Reservoir < 14.000 | Gini:0.250 | Instance:6
+|||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:2
+||||||--[0]
+||||||--[0]
+|||||--The Second Most Dominant Land Type < 7.000 | Gini:0.000 | Instance:4
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:3
+|||||||--[1]
+|||||||--[1]
+||||--Water Reservoir Surface < 80000.000 | Gini:0.000 | Instance:3
+|||||--Water Reservoir Surface < 1900.000 | Gini:0.000 | Instance:2
+||||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+||||||--Water Reservoir Surface < 1900.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+|||||--Water Reservoir Surface < 80000.000 | Gini:0.000 | Instance:1
+||||||--[1]
+||||||--[1]
+|||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:4
+||||--[0]
+||||--[0]
+Accuracy 0.587
+
+Decision Tree for Brown frog
+--Presence of Vegetation < 4.000 | Gini:0.288 | Instance:126
+|--Water Reservoir Surface < 4000.000 | Gini:0.249 | Instance:110
+||--Water Reservoir Surface < 3400.000 | Gini:0.284 | Instance:87
+|||--Presence of Vegetation < 1.000 | Gini:0.272 | Instance:85
+||||--Number of Reservoir < 2.000 | Gini:0.350 | Instance:12
+|||||--Type of Reservoir < 5.000 | Gini:0.305 | Instance:10
+||||||--Presence of Fishing < 1.000 | Gini:0.000 | Instance:7
+|||||||--Water Reservoir Surface < 1500.000 | Gini:0.000 | Instance:1
+||||||||--[0]
+||||||||--[0]
+|||||||--Water Reservoir Surface < 1300.000 | Gini:0.000 | Instance:6
+||||||||--Water Reservoir Surface < 700.000 | Gini:0.000 | Instance:4
+|||||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:3
+||||||||||--[1]
+||||||||||--[1]
+|||||||||--Water Reservoir Surface < 700.000 | Gini:0.000 | Instance:1
+||||||||||--[1]
+||||||||||--[1]
+||||||||--Water Reservoir Surface < 1300.000 | Gini:0.000 | Instance:2
+|||||||||--[1]
+|||||||||--[1]
+||||||--The Most Dominant Land Type < 2.000 | Gini:0.000 | Instance:3
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+||||||||--[1]
+||||||||--[1]
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:2
+||||||||--[0]
+||||||||--[0]
+|||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:2
+||||||--[0]
+||||||--[0]
+||||--Type of Reservoir < 15.000 | Gini:0.219 | Instance:73
+|||||--Maintenance Status of Reservoir < 2.000 | Gini:0.130 | Instance:57
+||||||--The Second Most Dominant Land Type < 6.000 | Gini:0.127 | Instance:56
+|||||||--Type of Reservoir < 11.000 | Gini:0.210 | Instance:22
+||||||||--Type of Reservoir < 5.000 | Gini:0.256 | Instance:13
+|||||||||--The Third Most Dominant Land Type < 6.000 | Gini:0.152 | Instance:12
+||||||||||--[0]
+||||||||||--[1]
+|||||||||--Water Reservoir Surface < 400.000 | Gini:0.000 | Instance:1
+||||||||||--[0]
+||||||||||--[0]
+||||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:9
+|||||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:1
+||||||||||--[1]
+||||||||||--[1]
+|||||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:8
+||||||||||--[1]
+||||||||||--[1]
+|||||||--Water Reservoir Surface < 1000.000 | Gini:0.053 | Instance:34
+||||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:24
+|||||||||--Water Reservoir Surface < 30.000 | Gini:0.000 | Instance:5
+||||||||||--[1]
+||||||||||--[1]
+|||||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:19
+||||||||||--[1]
+||||||||||--[1]
+||||||||--Water Reservoir Surface < 1700.000 | Gini:0.100 | Instance:10
+|||||||||--Number of Reservoir < 2.000 | Gini:0.000 | Instance:2
+||||||||||--[0]
+||||||||||--[1]
+|||||||||--Water Reservoir Surface < 3000.000 | Gini:0.000 | Instance:8
+||||||||||--[1]
+||||||||||--[1]
+||||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+|||||--The Third Most Dominant Land Type < 2.000 | Gini:0.295 | Instance:16
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:2
+|||||||--[0]
+|||||||--[0]
+||||||--The Second Most Dominant Land Type < 7.000 | Gini:0.268 | Instance:14
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:6
+||||||||--[1]
+||||||||--[1]
+|||||||--Minimum Distance to Road < 1.000 | Gini:0.357 | Instance:8
+||||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+|||||||||--[0]
+|||||||||--[0]
+||||||||--The Most Dominant Land Type < 2.000 | Gini:0.286 | Instance:7
+|||||||||--The Third Most Dominant Land Type < 6.000 | Gini:0.333 | Instance:4
+||||||||||--[1]
+||||||||||--[0]
+|||||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:3
+||||||||||--[1]
+||||||||||--[1]
+|||--Water Reservoir Surface < 3800.000 | Gini:0.000 | Instance:2
+||||--Water Reservoir Surface < 3400.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 3800.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+||--Water Reservoir Surface < 30000.000 | Gini:0.000 | Instance:23
+|||--Water Reservoir Surface < 4300.000 | Gini:0.000 | Instance:17
+||||--Water Reservoir Surface < 4000.000 | Gini:0.000 | Instance:3
+|||||--[1]
+|||||--[1]
+||||--Water Reservoir Surface < 4300.000 | Gini:0.000 | Instance:14
+|||||--[1]
+|||||--[1]
+|||--Water Reservoir Surface < 30000.000 | Gini:0.000 | Instance:6
+||||--[1]
+||||--[1]
+|--The Second Most Dominant Land Type < 6.000 | Gini:0.217 | Instance:16
+||--The Most Dominant Land Type < 9.000 | Gini:0.000 | Instance:6
+|||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:5
+||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:3
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:2
+|||||--[0]
+|||||--[0]
+|||--Water Reservoir Surface < 600.000 | Gini:0.000 | Instance:1
+||||--[1]
+||||--[1]
+||--Water Reservoir Surface < 300.000 | Gini:0.100 | Instance:10
+|||--The Most Dominant Land Type < 2.000 | Gini:0.000 | Instance:2
+||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:1
+|||||--[1]
+|||||--[1]
+||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+|||--Water Reservoir Surface < 1900.000 | Gini:0.000 | Instance:8
+||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:2
+|||||--[1]
+|||||--[1]
+||||--Water Reservoir Surface < 1900.000 | Gini:0.000 | Instance:6
+|||||--[1]
+|||||--[1]
+Accuracy 0.619
+
+Decision Tree for Common toad
+--Type of Reservoir < 12.000 | Gini:0.396 | Instance:126
+|--The Third Most Dominant Land Type < 6.000 | Gini:0.340 | Instance:86
+||--The Second Most Dominant Land Type < 6.000 | Gini:0.100 | Instance:24
+|||--The Third Most Dominant Land Type < 2.000 | Gini:0.267 | Instance:5
+||||--Water Reservoir Surface < 30000.000 | Gini:0.000 | Instance:3
+|||||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:2
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+||||||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+|||||--Water Reservoir Surface < 30000.000 | Gini:0.000 | Instance:1
+||||||--[1]
+||||||--[1]
+||||--Water Reservoir Surface < 4300.000 | Gini:0.000 | Instance:2
+|||||--[1]
+|||||--[1]
+|||--Water Reservoir Surface < 3800.000 | Gini:0.000 | Instance:19
+||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:12
+|||||--[1]
+|||||--[1]
+||||--Water Reservoir Surface < 3800.000 | Gini:0.000 | Instance:7
+|||||--[1]
+|||||--[1]
+||--Water Reservoir Surface < 8250.000 | Gini:0.388 | Instance:62
+|||--Water Reservoir Surface < 3300.000 | Gini:0.406 | Instance:49
+||||--Minimum Distance to Road < 9.000 | Gini:0.369 | Instance:44
+|||||--Maintenance Status of Reservoir < 2.000 | Gini:0.360 | Instance:42
+||||||--Type of Shore < 2.000 | Gini:0.340 | Instance:41
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.327 | Instance:40
+||||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:7
+|||||||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:5
+||||||||||--[1]
+||||||||||--[1]
+|||||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:2
+||||||||||--[1]
+||||||||||--[1]
+||||||||--Water Reservoir Surface < 1300.000 | Gini:0.356 | Instance:33
+|||||||||--Water Reservoir Surface < 1000.000 | Gini:0.336 | Instance:17
+||||||||||--[1]
+||||||||||--[0]
+|||||||||--Presence of Fishing < 4.000 | Gini:0.117 | Instance:16
+||||||||||--[1]
+||||||||||--[0]
+|||||||--Water Reservoir Surface < 1100.000 | Gini:0.000 | Instance:1
+||||||||--[0]
+||||||||--[0]
+||||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+|||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:2
+||||||--Water Reservoir Surface < 50.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+||||--The Most Dominant Land Type < 4.000 | Gini:0.200 | Instance:5
+|||||--Water Reservoir Surface < 3300.000 | Gini:0.000 | Instance:3
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 4000.000 | Gini:0.000 | Instance:2
+||||||--Water Reservoir Surface < 3400.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+||||||--Water Reservoir Surface < 4000.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+|||--Water Reservoir Surface < 115000.000 | Gini:0.077 | Instance:13
+||||--Water Reservoir Surface < 28300.000 | Gini:0.000 | Instance:11
+|||||--Water Reservoir Surface < 10050.000 | Gini:0.000 | Instance:8
+||||||--Water Reservoir Surface < 9000.000 | Gini:0.000 | Instance:4
+|||||||--Water Reservoir Surface < 8250.000 | Gini:0.000 | Instance:2
+||||||||--[1]
+||||||||--[1]
+|||||||--Water Reservoir Surface < 9000.000 | Gini:0.000 | Instance:2
+||||||||--[1]
+||||||||--[1]
+||||||--Water Reservoir Surface < 10050.000 | Gini:0.000 | Instance:4
+|||||||--[1]
+|||||||--[1]
+|||||--Water Reservoir Surface < 28300.000 | Gini:0.000 | Instance:3
+||||||--[1]
+||||||--[1]
+||||--Water Reservoir Surface < 360000.000 | Gini:0.000 | Instance:2
+|||||--Water Reservoir Surface < 115000.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 360000.000 | Gini:0.000 | Instance:1
+||||||--[1]
+||||||--[1]
+|--The Most Dominant Land Type < 2.000 | Gini:0.308 | Instance:40
+||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:14
+|||--[0]
+|||--[0]
+||--Precentage Access to Undeveloped Area < 100.000 | Gini:0.336 | Instance:26
+|||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:4
+||||--[0]
+||||--[0]
+|||--The Second Most Dominant Land Type < 2.000 | Gini:0.341 | Instance:22
+||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:6
+|||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:4
+||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:3
+|||||||--[1]
+|||||||--[1]
+|||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:2
+||||||--[1]
+||||||--[1]
+||||--The Third Most Dominant Land Type < 10.000 | Gini:0.341 | Instance:16
+|||||--The Most Dominant Land Type < 10.000 | Gini:0.341 | Instance:11
+||||||--The Third Most Dominant Land Type < 7.000 | Gini:0.188 | Instance:8
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:4
+||||||||--[1]
+||||||||--[1]
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:4
+||||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:1
+|||||||||--[1]
+|||||||||--[1]
+||||||||--Water Reservoir Surface < 80000.000 | Gini:0.000 | Instance:3
+|||||||||--Water Reservoir Surface < 1900.000 | Gini:0.000 | Instance:2
+||||||||||--[0]
+||||||||||--[0]
+|||||||||--Water Reservoir Surface < 80000.000 | Gini:0.000 | Instance:1
+||||||||||--[0]
+||||||||||--[0]
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:3
+|||||||--[0]
+|||||||--[0]
+|||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:5
+||||||--[1]
+||||||--[1]
+Accuracy 0.429
+
+Decision Tree for Fire-bellied toad
+--Water Reservoir Surface < 16000.000 | Gini:0.420 | Instance:126
+|--Type of Reservoir < 12.000 | Gini:0.410 | Instance:113
+||--Minimum Distance to Building < 2.000 | Gini:0.440 | Instance:74
+|||--Water Reservoir Surface < 1100.000 | Gini:0.338 | Instance:46
+||||--Use of Water Reservoir < 1.000 | Gini:0.415 | Instance:24
+|||||--The Third Most Dominant Land Type < 5.000 | Gini:0.380 | Instance:17
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:4
+|||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:2
+||||||||--[1]
+||||||||--[1]
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:2
+||||||||--[1]
+||||||||--[1]
+||||||--The Most Dominant Land Type < 9.000 | Gini:0.323 | Instance:13
+|||||||--Number of Reservoir < 2.000 | Gini:0.311 | Instance:10
+||||||||--Water Reservoir Surface < 300.000 | Gini:0.296 | Instance:9
+|||||||||--Water Reservoir Surface < 30.000 | Gini:0.000 | Instance:3
+||||||||||--[0]
+||||||||||--[0]
+|||||||||--Minimum Distance to Building < 1.000 | Gini:0.267 | Instance:6
+||||||||||--[1]
+||||||||||--[0]
+||||||||--Water Reservoir Surface < 150.000 | Gini:0.000 | Instance:1
+|||||||||--[1]
+|||||||||--[1]
+|||||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:3
+||||||||--Water Reservoir Surface < 350.000 | Gini:0.000 | Instance:1
+|||||||||--[1]
+|||||||||--[1]
+||||||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:2
+|||||||||--[1]
+|||||||||--[1]
+|||||--The Second Most Dominant Land Type < 2.000 | Gini:0.000 | Instance:7
+||||||--Water Reservoir Surface < 350.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:6
+|||||||--[0]
+|||||||--[0]
+||||--The Third Most Dominant Land Type < 10.000 | Gini:0.130 | Instance:22
+|||||--Water Reservoir Surface < 3800.000 | Gini:0.000 | Instance:15
+||||||--Water Reservoir Surface < 1300.000 | Gini:0.000 | Instance:9
+|||||||--[0]
+|||||||--[0]
+||||||--Water Reservoir Surface < 3800.000 | Gini:0.000 | Instance:6
+|||||||--[0]
+|||||||--[0]
+|||||--Use of Water Reservoir < 3.000 | Gini:0.190 | Instance:7
+||||||--Water Reservoir Surface < 3400.000 | Gini:0.000 | Instance:3
+|||||||--Water Reservoir Surface < 2300.000 | Gini:0.000 | Instance:2
+||||||||--[1]
+||||||||--[1]
+|||||||--Water Reservoir Surface < 3400.000 | Gini:0.000 | Instance:1
+||||||||--[0]
+||||||||--[0]
+||||||--Water Reservoir Surface < 2400.000 | Gini:0.000 | Instance:4
+|||||||--Water Reservoir Surface < 2300.000 | Gini:0.000 | Instance:2
+||||||||--Water Reservoir Surface < 1100.000 | Gini:0.000 | Instance:1
+|||||||||--[0]
+|||||||||--[0]
+||||||||--Water Reservoir Surface < 2300.000 | Gini:0.000 | Instance:1
+|||||||||--[0]
+|||||||||--[0]
+|||||||--Water Reservoir Surface < 2400.000 | Gini:0.000 | Instance:2
+||||||||--[0]
+||||||||--[0]
+|||--Presence of Vegetation < 2.000 | Gini:0.405 | Instance:28
+||||--The Third Most Dominant Land Type < 2.000 | Gini:0.000 | Instance:8
+|||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 5000.000 | Gini:0.000 | Instance:7
+||||||--Water Reservoir Surface < 250.000 | Gini:0.000 | Instance:6
+|||||||--[1]
+|||||||--[1]
+||||||--Water Reservoir Surface < 5000.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+||||--The Third Most Dominant Land Type < 2.000 | Gini:0.400 | Instance:20
+|||||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:2
+||||||--Water Reservoir Surface < 3000.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+||||||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+|||||--The Third Most Dominant Land Type < 10.000 | Gini:0.333 | Instance:18
+||||||--Water Reservoir Surface < 10050.000 | Gini:0.152 | Instance:12
+|||||||--Presence of Vegetation < 4.000 | Gini:0.121 | Instance:11
+||||||||--Water Reservoir Surface < 3300.000 | Gini:0.000 | Instance:8
+|||||||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:4
+||||||||||--[0]
+||||||||||--[0]
+|||||||||--Water Reservoir Surface < 3300.000 | Gini:0.000 | Instance:4
+||||||||||--[0]
+||||||||||--[0]
+||||||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:3
+|||||||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:2
+||||||||||--[0]
+||||||||||--[0]
+|||||||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:1
+||||||||||--[1]
+||||||||||--[1]
+|||||||--Water Reservoir Surface < 10050.000 | Gini:0.000 | Instance:1
+||||||||--[1]
+||||||||--[1]
+||||||--Number of Reservoir < 3.000 | Gini:0.000 | Instance:6
+|||||||--Water Reservoir Surface < 50.000 | Gini:0.000 | Instance:4
+||||||||--[1]
+||||||||--[1]
+|||||||--Water Reservoir Surface < 2000.000 | Gini:0.000 | Instance:2
+||||||||--[0]
+||||||||--[0]
+||--The Most Dominant Land Type < 14.000 | Gini:0.259 | Instance:39
+|||--Minimum Distance to Road < 5.000 | Gini:0.238 | Instance:38
+||||--Minimum Distance to Building < 1.000 | Gini:0.125 | Instance:26
+|||||--Type of Reservoir < 14.000 | Gini:0.000 | Instance:3
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:2
+|||||||--[0]
+|||||||--[0]
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+|||||--The Third Most Dominant Land Type < 2.000 | Gini:0.058 | Instance:23
+||||||--The Second Most Dominant Land Type < 10.000 | Gini:0.000 | Instance:3
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:2
+||||||||--[0]
+||||||||--[0]
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+||||||||--[1]
+||||||||--[1]
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:20
+|||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:1
+||||||||--[0]
+||||||||--[0]
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:19
+||||||||--[0]
+||||||||--[0]
+||||--The Second Most Dominant Land Type < 2.000 | Gini:0.333 | Instance:12
+|||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:4
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:3
+|||||||--[0]
+|||||||--[0]
+||||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+|||||--The Third Most Dominant Land Type < 10.000 | Gini:0.333 | Instance:8
+||||||--Type of Reservoir < 14.000 | Gini:0.222 | Instance:6
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:3
+||||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:1
+|||||||||--[1]
+|||||||||--[1]
+||||||||--Water Reservoir Surface < 1900.000 | Gini:0.000 | Instance:2
+|||||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+||||||||||--[0]
+||||||||||--[0]
+|||||||||--Water Reservoir Surface < 1900.000 | Gini:0.000 | Instance:1
+||||||||||--[0]
+||||||||||--[0]
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:3
+||||||||--[1]
+||||||||--[1]
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:2
+|||||||--[0]
+|||||||--[0]
+|||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:1
+||||--[1]
+||||--[1]
+|--Presence of Vegetation < 1.000 | Gini:0.256 | Instance:13
+||--Water Reservoir Surface < 115000.000 | Gini:0.000 | Instance:1
+|||--[0]
+|||--[0]
+||--Number of Reservoir < 3.000 | Gini:0.167 | Instance:12
+|||--Presence of Vegetation < 4.000 | Gini:0.000 | Instance:4
+||||--Water Reservoir Surface < 30000.000 | Gini:0.000 | Instance:2
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 80000.000 | Gini:0.000 | Instance:2
+|||||--Water Reservoir Surface < 22000.000 | Gini:0.000 | Instance:1
+||||||--[1]
+||||||--[1]
+|||||--Water Reservoir Surface < 80000.000 | Gini:0.000 | Instance:1
+||||||--[1]
+||||||--[1]
+|||--Water Reservoir Surface < 28300.000 | Gini:0.000 | Instance:8
+||||--Water Reservoir Surface < 16000.000 | Gini:0.000 | Instance:2
+|||||--[1]
+|||||--[1]
+||||--Water Reservoir Surface < 28300.000 | Gini:0.000 | Instance:6
+|||||--[1]
+|||||--[1]
+Accuracy 0.571
+
+Decision Tree for Tree frog
+--Type of Reservoir < 12.000 | Gini:0.436 | Instance:126
+|--Presence of Vegetation < 1.000 | Gini:0.460 | Instance:86
+||--The Most Dominant Land Type < 10.000 | Gini:0.302 | Instance:16
+|||--Water Reservoir Surface < 500.000 | Gini:0.111 | Instance:12
+||||--Use of Water Reservoir < 3.000 | Gini:0.000 | Instance:3
+|||||--Water Reservoir Surface < 350.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:2
+||||||--[1]
+||||||--[1]
+||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:9
+|||||--[0]
+|||||--[0]
+|||--Water Reservoir Surface < 115000.000 | Gini:0.000 | Instance:4
+||||--Water Reservoir Surface < 10000.000 | Gini:0.000 | Instance:3
+|||||--Water Reservoir Surface < 1800.000 | Gini:0.000 | Instance:2
+||||||--Water Reservoir Surface < 700.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+||||||--Water Reservoir Surface < 1800.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+|||||--Water Reservoir Surface < 10000.000 | Gini:0.000 | Instance:1
+||||||--[1]
+||||||--[1]
+||||--Water Reservoir Surface < 115000.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+||--Presence of Vegetation < 2.000 | Gini:0.439 | Instance:70
+|||--The Most Dominant Land Type < 7.000 | Gini:0.204 | Instance:21
+||||--Water Reservoir Surface < 28300.000 | Gini:0.000 | Instance:16
+|||||--Water Reservoir Surface < 400.000 | Gini:0.000 | Instance:15
+||||||--Water Reservoir Surface < 250.000 | Gini:0.000 | Instance:5
+|||||||--Water Reservoir Surface < 50.000 | Gini:0.000 | Instance:4
+||||||||--[1]
+||||||||--[1]
+|||||||--Water Reservoir Surface < 250.000 | Gini:0.000 | Instance:1
+||||||||--[1]
+||||||||--[1]
+||||||--Water Reservoir Surface < 400.000 | Gini:0.000 | Instance:10
+|||||||--[1]
+|||||||--[1]
+|||||--Water Reservoir Surface < 28300.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+||||--Number of Reservoir < 4.000 | Gini:0.000 | Instance:5
+|||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:3
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 40000.000 | Gini:0.000 | Instance:2
+||||||--[1]
+||||||--[1]
+|||--Water Reservoir Surface < 100.000 | Gini:0.455 | Instance:49
+||||--Water Reservoir Surface < 30.000 | Gini:0.000 | Instance:3
+|||||--[0]
+|||||--[0]
+||||--Maintenance Status of Reservoir < 1.000 | Gini:0.454 | Instance:46
+|||||--The Third Most Dominant Land Type < 10.000 | Gini:0.449 | Instance:44
+||||||--The Third Most Dominant Land Type < 7.000 | Gini:0.409 | Instance:36
+|||||||--Minimum Distance to Building < 5.000 | Gini:0.435 | Instance:31
+||||||||--Water Reservoir Surface < 8300.000 | Gini:0.372 | Instance:23
+|||||||||--Presence of Fishing < 2.000 | Gini:0.382 | Instance:18
+||||||||||--[1]
+||||||||||--[0]
+|||||||||--Water Reservoir Surface < 29000.000 | Gini:0.000 | Instance:5
+||||||||||--[1]
+||||||||||--[1]
+||||||||--Water Reservoir Surface < 10050.000 | Gini:0.300 | Instance:8
+|||||||||--Water Reservoir Surface < 4300.000 | Gini:0.267 | Instance:5
+||||||||||--[0]
+||||||||||--[1]
+|||||||||--Water Reservoir Surface < 30000.000 | Gini:0.000 | Instance:3
+||||||||||--[0]
+||||||||||--[0]
+|||||||--Water Reservoir Surface < 3300.000 | Gini:0.000 | Instance:5
+||||||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:4
+|||||||||--[1]
+|||||||||--[1]
+||||||||--Water Reservoir Surface < 3300.000 | Gini:0.000 | Instance:1
+|||||||||--[1]
+|||||||||--[1]
+||||||--The Most Dominant Land Type < 6.000 | Gini:0.300 | Instance:8
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:3
+||||||||--[0]
+||||||||--[0]
+|||||||--Presence of Vegetation < 4.000 | Gini:0.000 | Instance:5
+||||||||--Water Reservoir Surface < 9000.000 | Gini:0.000 | Instance:3
+|||||||||--Water Reservoir Surface < 8250.000 | Gini:0.000 | Instance:2
+||||||||||--[1]
+||||||||||--[1]
+|||||||||--Water Reservoir Surface < 9000.000 | Gini:0.000 | Instance:1
+||||||||||--[1]
+||||||||||--[1]
+||||||||--Water Reservoir Surface < 2000.000 | Gini:0.000 | Instance:2
+|||||||||--Water Reservoir Surface < 600.000 | Gini:0.000 | Instance:1
+||||||||||--[0]
+||||||||||--[0]
+|||||||||--Water Reservoir Surface < 2000.000 | Gini:0.000 | Instance:1
+||||||||||--[0]
+||||||||||--[0]
+|||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:2
+||||||--[0]
+||||||--[0]
+|--The Second Most Dominant Land Type < 2.000 | Gini:0.281 | Instance:40
+||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:13
+|||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:9
+||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:8
+|||||--[0]
+|||||--[0]
+|||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:4
+||||--[0]
+||||--[0]
+||--Minimum Distance to Road < 5.000 | Gini:0.350 | Instance:27
+|||--The Second Most Dominant Land Type < 11.000 | Gini:0.196 | Instance:18
+||||--The Second Most Dominant Land Type < 7.000 | Gini:0.193 | Instance:17
+|||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:6
+||||||--[0]
+||||||--[0]
+|||||--Presence of Vegetation < 3.000 | Gini:0.164 | Instance:11
+||||||--The Most Dominant Land Type < 2.000 | Gini:0.150 | Instance:10
+|||||||--The Second Most Dominant Land Type < 10.000 | Gini:0.250 | Instance:4
+||||||||--The Third Most Dominant Land Type < 6.000 | Gini:0.000 | Instance:2
+|||||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+||||||||||--[0]
+||||||||||--[0]
+|||||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+||||||||||--[1]
+||||||||||--[1]
+||||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:2
+|||||||||--[0]
+|||||||||--[0]
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:6
+||||||||--[0]
+||||||||--[0]
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+|||||--[1]
+|||||--[1]
+|||--The Third Most Dominant Land Type < 7.000 | Gini:0.000 | Instance:9
+||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:4
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 80000.000 | Gini:0.000 | Instance:5
+|||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:4
+||||||--[1]
+||||||--[1]
+|||||--Water Reservoir Surface < 80000.000 | Gini:0.000 | Instance:1
+||||||--[1]
+||||||--[1]
+Accuracy 0.587
+
+Decision Tree for Common newt
+--Type of Reservoir < 11.000 | Gini:0.399 | Instance:126
+|--Precentage Access to Undeveloped Area < 75.000 | Gini:0.457 | Instance:83
+||--Precentage Access to Undeveloped Area < 50.000 | Gini:0.185 | Instance:13
+|||--Use of Water Reservoir < 3.000 | Gini:0.267 | Instance:5
+||||--Water Reservoir Surface < 450.000 | Gini:0.000 | Instance:3
+|||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 450.000 | Gini:0.000 | Instance:2
+||||||--[1]
+||||||--[1]
+||||--Water Reservoir Surface < 3800.000 | Gini:0.000 | Instance:2
+|||||--Water Reservoir Surface < 1500.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 3800.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||--Water Reservoir Surface < 50.000 | Gini:0.000 | Instance:8
+||||--[0]
+||||--[0]
+||--Presence of Vegetation < 1.000 | Gini:0.473 | Instance:70
+|||--Number of Reservoir < 2.000 | Gini:0.367 | Instance:14
+||||--Water Reservoir Surface < 1800.000 | Gini:0.343 | Instance:7
+|||||--Water Reservoir Surface < 1100.000 | Gini:0.267 | Instance:5
+||||||--Use of Water Reservoir < 3.000 | Gini:0.000 | Instance:3
+|||||||--Water Reservoir Surface < 350.000 | Gini:0.000 | Instance:1
+||||||||--[0]
+||||||||--[0]
+|||||||--Water Reservoir Surface < 700.000 | Gini:0.000 | Instance:2
+||||||||--Water Reservoir Surface < 350.000 | Gini:0.000 | Instance:1
+|||||||||--[1]
+|||||||||--[1]
+||||||||--Water Reservoir Surface < 700.000 | Gini:0.000 | Instance:1
+|||||||||--[1]
+|||||||||--[1]
+||||||--Water Reservoir Surface < 1300.000 | Gini:0.000 | Instance:2
+|||||||--Water Reservoir Surface < 1100.000 | Gini:0.000 | Instance:1
+||||||||--[0]
+||||||||--[0]
+|||||||--Water Reservoir Surface < 1300.000 | Gini:0.000 | Instance:1
+||||||||--[0]
+||||||||--[0]
+|||||--Water Reservoir Surface < 5000.000 | Gini:0.000 | Instance:2
+||||||--Water Reservoir Surface < 1800.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+||||||--Water Reservoir Surface < 5000.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+||||--Type of Reservoir < 2.000 | Gini:0.000 | Instance:7
+|||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:6
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 3400.000 | Gini:0.000 | Instance:1
+||||||--[1]
+||||||--[1]
+|||--Minimum Distance to Road < 9.000 | Gini:0.450 | Instance:56
+||||--Precentage Access to Undeveloped Area < 100.000 | Gini:0.445 | Instance:54
+|||||--Minimum Distance to Road < 2.000 | Gini:0.000 | Instance:8
+||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:7
+|||||||--Water Reservoir Surface < 30.000 | Gini:0.000 | Instance:1
+||||||||--[1]
+||||||||--[1]
+|||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:6
+||||||||--[1]
+||||||||--[1]
+||||||--Water Reservoir Surface < 400.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+|||||--Water Reservoir Surface < 150.000 | Gini:0.454 | Instance:46
+||||||--Water Reservoir Surface < 50.000 | Gini:0.000 | Instance:2
+|||||||--[0]
+|||||||--[0]
+||||||--The Third Most Dominant Land Type < 10.000 | Gini:0.435 | Instance:44
+|||||||--Water Reservoir Surface < 3300.000 | Gini:0.449 | Instance:35
+||||||||--The Second Most Dominant Land Type < 6.000 | Gini:0.318 | Instance:19
+|||||||||--Presence of Vegetation < 3.000 | Gini:0.000 | Instance:6
+||||||||||--[1]
+||||||||||--[0]
+|||||||||--The Most Dominant Land Type < 10.000 | Gini:0.141 | Instance:13
+||||||||||--[1]
+||||||||||--[0]
+||||||||--Water Reservoir Surface < 10050.000 | Gini:0.300 | Instance:16
+|||||||||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:6
+||||||||||--[0]
+||||||||||--[0]
+|||||||||--Minimum Distance to Road < 1.000 | Gini:0.300 | Instance:10
+||||||||||--[0]
+||||||||||--[1]
+|||||||--Presence of Vegetation < 4.000 | Gini:0.000 | Instance:9
+||||||||--Water Reservoir Surface < 8250.000 | Gini:0.000 | Instance:8
+|||||||||--Water Reservoir Surface < 450.000 | Gini:0.000 | Instance:5
+||||||||||--[1]
+||||||||||--[1]
+|||||||||--Water Reservoir Surface < 8250.000 | Gini:0.000 | Instance:3
+||||||||||--[1]
+||||||||||--[1]
+||||||||--Water Reservoir Surface < 2000.000 | Gini:0.000 | Instance:1
+|||||||||--[0]
+|||||||||--[0]
+||||--Water Reservoir Surface < 9000.000 | Gini:0.000 | Instance:2
+|||||--Water Reservoir Surface < 50.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 9000.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|--Number of Reservoir < 7.000 | Gini:0.168 | Instance:43
+||--The Most Dominant Land Type < 14.000 | Gini:0.132 | Instance:42
+|||--The Third Most Dominant Land Type < 6.000 | Gini:0.113 | Instance:41
+||||--Minimum Distance to Road < 5.000 | Gini:0.231 | Instance:13
+|||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:7
+||||||--[0]
+||||||--[0]
+|||||--The Most Dominant Land Type < 7.000 | Gini:0.250 | Instance:6
+||||||--Type of Reservoir < 15.000 | Gini:0.250 | Instance:4
+|||||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:2
+||||||||--[0]
+||||||||--[0]
+|||||||--The Second Most Dominant Land Type < 7.000 | Gini:0.000 | Instance:2
+||||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+|||||||||--[0]
+|||||||||--[0]
+||||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+|||||||||--[1]
+|||||||||--[1]
+||||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:2
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+||||||||--[1]
+||||||||--[1]
+|||||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:1
+||||||||--[1]
+||||||||--[1]
+||||--Water Reservoir Surface < 80000.000 | Gini:0.000 | Instance:28
+|||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:27
+||||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+||||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:26
+|||||||--[0]
+|||||||--[0]
+|||||--Water Reservoir Surface < 80000.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:1
+||||--[1]
+||||--[1]
+||--Water Reservoir Surface < 1900.000 | Gini:0.000 | Instance:1
+|||--[1]
+|||--[1]
+Accuracy 0.635
+
+Decision Tree for Great crested newt
+--Water Reservoir Surface < 4000.000 | Gini:0.214 | Instance:126
+|--Water Reservoir Surface < 300.000 | Gini:0.139 | Instance:98
+||--Presence of Vegetation < 2.000 | Gini:0.167 | Instance:16
+|||--The Third Most Dominant Land Type < 10.000 | Gini:0.000 | Instance:6
+||||--Water Reservoir Surface < 250.000 | Gini:0.000 | Instance:4
+|||||--Water Reservoir Surface < 150.000 | Gini:0.000 | Instance:3
+||||||--[1]
+||||||--[1]
+|||||--Water Reservoir Surface < 250.000 | Gini:0.000 | Instance:1
+||||||--[1]
+||||||--[1]
+||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:2
+|||||--Water Reservoir Surface < 50.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:10
+||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:6
+|||||--Water Reservoir Surface < 30.000 | Gini:0.000 | Instance:3
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:3
+||||||--[0]
+||||||--[0]
+||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:4
+|||||--[0]
+|||||--[0]
+||--Use of Water Reservoir < 1.000 | Gini:0.086 | Instance:82
+|||--Number of Reservoir < 2.000 | Gini:0.026 | Instance:62
+||||--Water Reservoir Surface < 3300.000 | Gini:0.000 | Instance:57
+|||||--Water Reservoir Surface < 1000.000 | Gini:0.000 | Instance:56
+||||||--Water Reservoir Surface < 400.000 | Gini:0.000 | Instance:41
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:34
+||||||||--[0]
+||||||||--[0]
+|||||||--Water Reservoir Surface < 400.000 | Gini:0.000 | Instance:7
+||||||||--[0]
+||||||||--[0]
+||||||--Water Reservoir Surface < 1000.000 | Gini:0.000 | Instance:15
+|||||||--[0]
+|||||||--[0]
+|||||--Water Reservoir Surface < 3300.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+||||--Water Reservoir Surface < 1900.000 | Gini:0.000 | Instance:5
+|||||--Water Reservoir Surface < 1000.000 | Gini:0.000 | Instance:1
+||||||--[1]
+||||||--[1]
+|||||--Water Reservoir Surface < 1900.000 | Gini:0.000 | Instance:4
+||||||--[0]
+||||||--[0]
+|||--The Most Dominant Land Type < 10.000 | Gini:0.161 | Instance:20
+||||--Presence of Fishing < 1.000 | Gini:0.078 | Instance:17
+|||||--The Second Most Dominant Land Type < 6.000 | Gini:0.000 | Instance:3
+||||||--Water Reservoir Surface < 400.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:2
+|||||||--[0]
+|||||||--[0]
+|||||--Water Reservoir Surface < 3800.000 | Gini:0.000 | Instance:14
+||||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:13
+|||||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:3
+||||||||--[0]
+||||||||--[0]
+|||||||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:10
+||||||||--[0]
+||||||||--[0]
+||||||--Water Reservoir Surface < 3800.000 | Gini:0.000 | Instance:1
+|||||||--[0]
+|||||||--[0]
+||||--Water Reservoir Surface < 700.000 | Gini:0.000 | Instance:3
+|||||--Water Reservoir Surface < 450.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 1800.000 | Gini:0.000 | Instance:2
+||||||--Water Reservoir Surface < 700.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+||||||--Water Reservoir Surface < 1800.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+|--Presence of Vegetation < 3.000 | Gini:0.323 | Instance:28
+||--The Third Most Dominant Land Type < 2.000 | Gini:0.187 | Instance:19
+|||--Water Reservoir Surface < 29000.000 | Gini:0.000 | Instance:1
+||||--[1]
+||||--[1]
+|||--Water Reservoir Surface < 4100.000 | Gini:0.160 | Instance:18
+||||--Presence of Vegetation < 1.000 | Gini:0.000 | Instance:2
+|||||--Water Reservoir Surface < 4000.000 | Gini:0.000 | Instance:1
+||||||--[0]
+||||||--[0]
+|||||--Water Reservoir Surface < 4000.000 | Gini:0.000 | Instance:1
+||||||--[1]
+||||||--[1]
+||||--Number of Reservoir < 2.000 | Gini:0.083 | Instance:16
+|||||--Water Reservoir Surface < 10050.000 | Gini:0.000 | Instance:3
+||||||--Water Reservoir Surface < 5000.000 | Gini:0.000 | Instance:2
+|||||||--[0]
+|||||||--[0]
+||||||--Water Reservoir Surface < 10050.000 | Gini:0.000 | Instance:1
+|||||||--[1]
+|||||||--[1]
+|||||--Water Reservoir Surface < 28300.000 | Gini:0.000 | Instance:13
+||||||--Water Reservoir Surface < 9000.000 | Gini:0.000 | Instance:8
+|||||||--Water Reservoir Surface < 8300.000 | Gini:0.000 | Instance:3
+||||||||--Water Reservoir Surface < 6300.000 | Gini:0.000 | Instance:2
+|||||||||--Water Reservoir Surface < 4100.000 | Gini:0.000 | Instance:1
+||||||||||--[0]
+||||||||||--[0]
+|||||||||--Water Reservoir Surface < 6300.000 | Gini:0.000 | Instance:1
+||||||||||--[0]
+||||||||||--[0]
+||||||||--Water Reservoir Surface < 8300.000 | Gini:0.000 | Instance:1
+|||||||||--[0]
+|||||||||--[0]
+|||||||--Water Reservoir Surface < 9000.000 | Gini:0.000 | Instance:5
+||||||||--[0]
+||||||||--[0]
+||||||--Water Reservoir Surface < 28300.000 | Gini:0.000 | Instance:5
+|||||||--[0]
+|||||||--[0]
+||--Type of Reservoir < 12.000 | Gini:0.190 | Instance:9
+|||--Minimum Distance to Road < 1.000 | Gini:0.000 | Instance:7
+||||--Water Reservoir Surface < 22000.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:6
+|||||--Water Reservoir Surface < 4300.000 | Gini:0.000 | Instance:1
+||||||--[1]
+||||||--[1]
+|||||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:5
+||||||--[1]
+||||||--[1]
+|||--Water Reservoir Surface < 80000.000 | Gini:0.000 | Instance:2
+||||--Water Reservoir Surface < 4000.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 80000.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+Accuracy 0.841
+
+Final Accuracy 0.610
+
