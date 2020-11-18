@@ -1,0 +1,37 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
+edge [fontname=helvetica] ;
+0 [label=<Presence of Vegetation &le; 3.5<br/>gini = 0.298<br/>samples = 126<br/>value = [23, 103]<br/>class = Brown frog>, fillcolor="#65b3eb"] ;
+1 [label=<Water Reservoir Surface &le; 3900.0<br/>gini = 0.261<br/>samples = 110<br/>value = [17, 93]<br/>class = Brown frog>, fillcolor="#5dafea"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<Water Reservoir Surface &le; 3350.0<br/>gini = 0.314<br/>samples = 87<br/>value = [17, 70]<br/>class = Brown frog>, fillcolor="#69b5eb"] ;
+1 -> 2 ;
+3 [label=<Presence of Vegetation &le; 0.5<br/>gini = 0.291<br/>samples = 85<br/>value = [15, 70]<br/>class = Brown frog>, fillcolor="#63b2eb"] ;
+2 -> 3 ;
+4 [label=<gini = 0.486<br/>samples = 12<br/>value = [5, 7]<br/>class = Brown frog>, fillcolor="#c6e3f8"] ;
+3 -> 4 ;
+5 [label=<gini = 0.236<br/>samples = 73<br/>value = [10, 63]<br/>class = Brown frog>, fillcolor="#58ade9"] ;
+3 -> 5 ;
+6 [label=<gini = 0.0<br/>samples = 2<br/>value = [2, 0]<br/>class = Not Brown frog>, fillcolor="#e58139"] ;
+2 -> 6 ;
+7 [label=<gini = 0.0<br/>samples = 23<br/>value = [0, 23]<br/>class = Brown frog>, fillcolor="#399de5"] ;
+1 -> 7 ;
+8 [label=<The Second Most Dominant Land Type &le; 4.0<br/>gini = 0.469<br/>samples = 16<br/>value = [6, 10]<br/>class = Brown frog>, fillcolor="#b0d8f5"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label=<Precentage Access to Undeveloped Area &le; 75.0<br/>gini = 0.278<br/>samples = 6<br/>value = [5, 1]<br/>class = Not Brown frog>, fillcolor="#ea9a61"] ;
+8 -> 9 ;
+10 [label=<gini = 0.0<br/>samples = 1<br/>value = [0, 1]<br/>class = Brown frog>, fillcolor="#399de5"] ;
+9 -> 10 ;
+11 [label=<gini = 0.0<br/>samples = 5<br/>value = [5, 0]<br/>class = Not Brown frog>, fillcolor="#e58139"] ;
+9 -> 11 ;
+12 [label=<Water Reservoir Surface &le; 200.0<br/>gini = 0.18<br/>samples = 10<br/>value = [1, 9]<br/>class = Brown frog>, fillcolor="#4fa8e8"] ;
+8 -> 12 ;
+13 [label=<The Second Most Dominant Land Type &le; 8.0<br/>gini = 0.5<br/>samples = 2<br/>value = [1, 1]<br/>class = Not Brown frog>, fillcolor="#ffffff"] ;
+12 -> 13 ;
+14 [label=<gini = 0.0<br/>samples = 1<br/>value = [1, 0]<br/>class = Not Brown frog>, fillcolor="#e58139"] ;
+13 -> 14 ;
+15 [label=<gini = 0.0<br/>samples = 1<br/>value = [0, 1]<br/>class = Brown frog>, fillcolor="#399de5"] ;
+13 -> 15 ;
+16 [label=<gini = 0.0<br/>samples = 8<br/>value = [0, 8]<br/>class = Brown frog>, fillcolor="#399de5"] ;
+12 -> 16 ;
+}
