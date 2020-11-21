@@ -80,7 +80,7 @@ def analTree(tree, nodePath, classIndex):
 	for i in range(sum(isLeaf)):
 		print("Leaf node %d misclassified %d tests over %d tests" % 
 			(i, totalMisclassify[i], totalNode[i]), end = ' ')
-		if(totalNode[i] > 0): print("with the accuracy of %.3f" % (totalMisclassify[i] * 1.0 / totalNode[i] * 100.0))		
+		if(totalNode[i] > 0): print("- Accuracy: %.3f" % (100.0 - (totalMisclassify[i] * 1.0 / totalNode[i] * 100.0)))		
 		else: print()
 for index in range(7):
 	treeClassifier = tree.DecisionTreeClassifier(max_depth = 4)
@@ -98,8 +98,8 @@ for index in range(7):
 	#labelPredict = treeClassifier.predict(attributeTrain)
 	#print("*" + str(accuracy_score(labelTrain[index], labelPredict) * 100))
 
-	#analTree(treeClassifier, treeClassifier.decision_path(attributeTest), index)
+	analTree(treeClassifier, treeClassifier.decision_path(attributeTest), index)
 	print()
 
 totalAccuracy /= 7
-print("Average accuracy:" + str(totalAccuracy))
+print("Average accuracy: " + str(totalAccuracy))

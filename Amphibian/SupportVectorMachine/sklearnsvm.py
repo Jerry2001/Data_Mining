@@ -44,4 +44,4 @@ for index in range(7):
 	print(label[index], end = ": ")
 	print(accuracy_score(labelTest[index], labelPredict) * 100)
 totalAccuracy /= 7
-print("\nAverage accuracy:" + str(totalAccuracy))
+print("\nAverage accuracy: " + str(totalAccuracy))
