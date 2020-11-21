@@ -1,0 +1,47 @@
+import pandas as pd
+from subprocess import call
+from sklearn import svm
+from sklearn.metrics import accuracy_score 
+from sklearn.metrics import classification_report 
+
+attribute = ["Water Reservoir Surface", "Number of Reservoir", "Type of Reservoir", "Presence of Vegetation", "The Most Dominant Land Type"
+, "The Second Most Dominant Land Type", "The Third Most Dominant Land Type", "Use of Water Reservoir", "Presence of Fishing", "Precentage Access to Undeveloped Area"
+, "Minimum Distance to Road", "Minimum Distance to Building", "Maintenance Status of Reservoir", "Type of Shore"]
+
+fileLabel =["gf", "bf", "ct", "ft", "tf", "cn", "gn"]
+label = ("Green frog", "Brown frog", "Common toad", "Fire-bellied toad", "Tree frog", "Common newt", "Great crested newt")
+trainData = pd.read_csv("../Dataset/preprocesstrain.csv", delimiter=",") 
+
+attributeTrain = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in trainData.itertuples())
+labelTrain = []
+labelTrain.append(list((row._15) for row in trainData.itertuples()))
+labelTrain.append(list((row._16) for row in trainData.itertuples()))
+labelTrain.append(list((row._17) for row in trainData.itertuples()))
+labelTrain.append(list((row._18) for row in trainData.itertuples()))
+labelTrain.append(list((row._19) for row in trainData.itertuples()))
+labelTrain.append(list((row._20) for row in trainData.itertuples()))
+labelTrain.append(list((row._21) for row in trainData.itertuples()))
+
+testData = pd.read_csv("../Dataset/preprocesstest.csv", delimiter=",") 
+
+attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
+labelTest = []
+labelTest.append(list(row._15 for row in testData.itertuples()))
+labelTest.append(list((row._16) for row in testData.itertuples()))
+labelTest.append(list((row._17) for row in testData.itertuples()))
+labelTest.append(list((row._18) for row in testData.itertuples()))
+labelTest.append(list((row._19) for row in testData.itertuples()))
+labelTest.append(list((row._20) for row in testData.itertuples()))
+labelTest.append(list((row._21) for row in testData.itertuples()))
+totalAccuracy = 0.0
+
+for index in range(7):
+	svmClassifier = svm.SVC()
+	svmClassifier = svmClassifier.fit(attributeTrain, labelTrain[index])
+	#print(labelTrain[index])
+	labelPredict = svmClassifier.predict(attributeTest)
+	totalAccuracy += accuracy_score(labelTest[index], labelPredict) * 100
+	print(label[index], end = ": ")
+	print(accuracy_score(labelTest[index], labelPredict) * 100)
+totalAccuracy /= 7
+print("\nAverage accuracy:" + str(totalAccuracy))
