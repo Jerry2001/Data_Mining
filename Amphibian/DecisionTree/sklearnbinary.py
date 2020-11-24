@@ -7,7 +7,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix 
 from sklearn.model_selection import train_test_split
 
-def accuracyCacl(label, predict):
+def accuracyCalc(label, predict):
 	if(not isinstance(label, list)): label = list(label['label'])
 	match = 0
 	for i in range(len(label)):
@@ -73,8 +73,8 @@ def analTree(tree, nodePath):
 	for testInstance in range(len(testData)):
 		nodeIndex = nodePath.indices[nodePath.indptr[testInstance]: nodePath.indptr[testInstance + 1]]
 		totalNode[sum(isLeaf[:nodeIndex[-1]])] += 1
-		totalMisclassify[sum(isLeaf[:nodeIndex[-1]])] += accuracyCacl([labelPredict[testInstance]],  [list(labelTest['label'])[testInstance]])
-		#print(sum(isLeaf[:nodeIndex[-1]]), accuracyCacl([labelPredict[testInstance]],  [list(labelTest['label'])[testInstance]]))
+		totalMisclassify[sum(isLeaf[:nodeIndex[-1]])] += accuracyCalc([labelPredict[testInstance]],  [list(labelTest['label'])[testInstance]])
+		#print(sum(isLeaf[:nodeIndex[-1]]), accuracyCalc([labelPredict[testInstance]],  [list(labelTest['label'])[testInstance]]))
 	for i in range(sum(isLeaf)):
 		print("Leaf node %d classified %d tests" % 
 			(i, totalNode[i]), end = ' ')
@@ -84,7 +84,7 @@ def analTree(tree, nodePath):
 treeClassifier = tree.DecisionTreeClassifier(max_depth = 8)
 treeClassifier = treeClassifier.fit(attributeTrain, labelTrain)
 labelPredict = treeClassifier.predict(attributeTest)
-totalAccuracy = accuracyCacl(labelTest, labelPredict)
+totalAccuracy = accuracyCalc(labelTest, labelPredict)
 analTree(treeClassifier, treeClassifier.decision_path(attributeTest))
 
 
@@ -95,7 +95,7 @@ print(totalAccuracy)
 #call(['dot', '-Tpng', file, '-o', 'binary.png', '-Gdpi=600'])
 
 labelPredict = treeClassifier.predict(attributeTrain)
-print("*" + str(accuracyCacl(labelTrain, labelPredict)))
+print("*" + str(accuracyCalc(labelTrain, labelPredict)))
 
 print()
 

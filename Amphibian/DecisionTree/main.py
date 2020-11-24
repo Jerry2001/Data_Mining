@@ -153,4 +153,4 @@ def multipleTree():
 	print(file = stdin)
 
 binaryHash()
-#multipleTree()
+multipleTree()

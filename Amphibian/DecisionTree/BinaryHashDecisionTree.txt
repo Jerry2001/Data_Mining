@@ -58,3 +58,375 @@
 |||||--[100000]
 |||||--[100000]
 Final Accuracy 0.657
+Decision Tree for Green frog
+--Water Reservoir Surface < 2300.000 | Gini:0.416 | Instance:124
+|--The Third Most Dominant Land Type < 6.000 | Gini:0.459 | Instance:86
+||--The Most Dominant Land Type < 10.000 | Gini:0.442 | Instance:24
+|||--The Second Most Dominant Land Type < 6.000 | Gini:0.410 | Instance:20
+||||--Presence of Vegetation < 4.000 | Gini:0.286 | Instance:10
+|||||--[1]
+|||||--[0]
+||||--Water Reservoir Surface < 2100.000 | Gini:0.178 | Instance:10
+|||||--[1]
+|||||--[0]
+|||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:4
+||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:1
+|||||--[1]
+|||||--[1]
+||||--Water Reservoir Surface < 1700.000 | Gini:0.000 | Instance:3
+|||||--[0]
+|||||--[0]
+||--Water Reservoir Surface < 350.000 | Gini:0.412 | Instance:62
+|||--Maintenance Status of Reservoir < 2.000 | Gini:0.244 | Instance:27
+||||--Precentage Access to Undeveloped Area < 50.000 | Gini:0.152 | Instance:24
+|||||--[1]
+|||||--[0]
+||||--Type of Reservoir < 15.000 | Gini:0.000 | Instance:3
+|||||--[1]
+|||||--[0]
+|||--Water Reservoir Surface < 400.000 | Gini:0.441 | Instance:35
+||||--Water Reservoir Surface < 350.000 | Gini:0.000 | Instance:3
+|||||--[1]
+|||||--[1]
+||||--The Third Most Dominant Land Type < 10.000 | Gini:0.425 | Instance:32
+|||||--[1]
+|||||--[0]
+|--Use of Water Reservoir < 1.000 | Gini:0.216 | Instance:38
+||--The Third Most Dominant Land Type < 7.000 | Gini:0.356 | Instance:19
+|||--Presence of Vegetation < 4.000 | Gini:0.152 | Instance:12
+||||--Number of Reservoir < 4.000 | Gini:0.091 | Instance:11
+|||||--[1]
+|||||--[0]
+||||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+|||--Water Reservoir Surface < 9000.000 | Gini:0.229 | Instance:7
+||||--Presence of Vegetation < 4.000 | Gini:0.000 | Instance:5
+|||||--[0]
+|||||--[1]
+||||--Water Reservoir Surface < 80000.000 | Gini:0.000 | Instance:2
+|||||--[1]
+|||||--[1]
+||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:19
+|||--Water Reservoir Surface < 3800.000 | Gini:0.000 | Instance:6
+||||--Water Reservoir Surface < 2300.000 | Gini:0.000 | Instance:2
+|||||--[1]
+|||||--[1]
+||||--Water Reservoir Surface < 3800.000 | Gini:0.000 | Instance:4
+|||||--[1]
+|||||--[1]
+|||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:13
+||||--[1]
+||||--[1]
+Accuracy 0.585
+
+Decision Tree for Brown frog
+--Precentage Access to Undeveloped Area < 75.000 | Gini:0.344 | Instance:124
+|--Use of Water Reservoir < 1.000 | Gini:0.346 | Instance:18
+||--The Most Dominant Land Type < 6.000 | Gini:0.194 | Instance:9
+|||--Water Reservoir Surface < 2100.000 | Gini:0.000 | Instance:1
+||||--[0]
+||||--[0]
+|||--Presence of Vegetation < 4.000 | Gini:0.125 | Instance:8
+||||--Water Reservoir Surface < 750.000 | Gini:0.000 | Instance:6
+|||||--[1]
+|||||--[1]
+||||--The Most Dominant Land Type < 9.000 | Gini:0.000 | Instance:2
+|||||--[0]
+|||||--[1]
+||--Presence of Fishing < 3.000 | Gini:0.267 | Instance:9
+|||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:4
+||||--[0]
+||||--[0]
+|||--Water Reservoir Surface < 7000.000 | Gini:0.267 | Instance:5
+||||--Type of Reservoir < 5.000 | Gini:0.000 | Instance:3
+|||||--[1]
+|||||--[0]
+||||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:2
+|||||--[0]
+|||||--[0]
+|--The Most Dominant Land Type < 2.000 | Gini:0.302 | Instance:106
+||--Type of Reservoir < 15.000 | Gini:0.069 | Instance:25
+|||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:18
+||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:2
+|||||--[1]
+|||||--[1]
+||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:16
+|||||--[1]
+|||||--[1]
+|||--The Second Most Dominant Land Type < 7.000 | Gini:0.214 | Instance:7
+||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:3
+|||||--[1]
+|||||--[1]
+||||--The Second Most Dominant Land Type < 10.000 | Gini:0.250 | Instance:4
+|||||--[0]
+|||||--[1]
+||--Water Reservoir Surface < 200.000 | Gini:0.355 | Instance:81
+|||--Type of Reservoir < 12.000 | Gini:0.300 | Instance:5
+||||--The Third Most Dominant Land Type < 10.000 | Gini:0.000 | Instance:4
+|||||--[0]
+|||||--[1]
+||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:1
+|||||--[1]
+|||||--[1]
+|||--Type of Shore < 2.000 | Gini:0.331 | Instance:76
+||||--Use of Water Reservoir < 3.000 | Gini:0.320 | Instance:75
+|||||--[1]
+|||||--[1]
+||||--Water Reservoir Surface < 1100.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+Accuracy 0.785
+
+Decision Tree for Common toad
+--Presence of Fishing < 1.000 | Gini:0.417 | Instance:124
+|--Presence of Vegetation < 3.000 | Gini:0.469 | Instance:80
+||--The Third Most Dominant Land Type < 2.000 | Gini:0.393 | Instance:35
+|||--Water Reservoir Surface < 1000.000 | Gini:0.000 | Instance:3
+||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:1
+|||||--[1]
+|||||--[1]
+||||--Water Reservoir Surface < 1000.000 | Gini:0.000 | Instance:2
+|||||--[1]
+|||||--[1]
+|||--Precentage Access to Undeveloped Area < 100.000 | Gini:0.392 | Instance:32
+||||--Precentage Access to Undeveloped Area < 75.000 | Gini:0.214 | Instance:7
+|||||--[0]
+|||||--[1]
+||||--Minimum Distance to Road < 2.000 | Gini:0.307 | Instance:25
+|||||--[0]
+|||||--[0]
+||--Presence of Vegetation < 4.000 | Gini:0.416 | Instance:45
+|||--Water Reservoir Surface < 3500.000 | Gini:0.299 | Instance:23
+||||--Water Reservoir Surface < 2100.000 | Gini:0.302 | Instance:16
+|||||--[1]
+|||||--[0]
+||||--Water Reservoir Surface < 8000.000 | Gini:0.000 | Instance:7
+|||||--[1]
+|||||--[1]
+|||--The Second Most Dominant Land Type < 6.000 | Gini:0.351 | Instance:22
+||||--Number of Reservoir < 2.000 | Gini:0.256 | Instance:13
+|||||--[0]
+|||||--[1]
+||||--Number of Reservoir < 7.000 | Gini:0.194 | Instance:9
+|||||--[1]
+|||||--[0]
+|--Water Reservoir Surface < 115000.000 | Gini:0.235 | Instance:44
+||--The Most Dominant Land Type < 6.000 | Gini:0.209 | Instance:43
+|||--Water Reservoir Surface < 40000.000 | Gini:0.326 | Instance:24
+||||--The Second Most Dominant Land Type < 9.000 | Gini:0.274 | Instance:23
+|||||--[1]
+|||||--[1]
+||||--Water Reservoir Surface < 40000.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+|||--Water Reservoir Surface < 700.000 | Gini:0.000 | Instance:19
+||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:6
+|||||--[1]
+|||||--[1]
+||||--Water Reservoir Surface < 700.000 | Gini:0.000 | Instance:13
+|||||--[1]
+|||||--[1]
+||--Water Reservoir Surface < 115000.000 | Gini:0.000 | Instance:1
+|||--[0]
+|||--[0]
+Accuracy 0.508
+
+Decision Tree for Fire-bellied toad
+--Water Reservoir Surface < 16000.000 | Gini:0.356 | Instance:124
+|--Type of Reservoir < 2.000 | Gini:0.334 | Instance:112
+||--The Third Most Dominant Land Type < 2.000 | Gini:0.354 | Instance:65
+|||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:6
+||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:5
+|||||--[1]
+|||||--[1]
+|||--Water Reservoir Surface < 1700.000 | Gini:0.321 | Instance:59
+||||--Presence of Vegetation < 3.000 | Gini:0.394 | Instance:33
+|||||--[0]
+|||||--[1]
+||||--Presence of Fishing < 2.000 | Gini:0.115 | Instance:26
+|||||--[0]
+|||||--[0]
+||--The Most Dominant Land Type < 14.000 | Gini:0.190 | Instance:47
+|||--Water Reservoir Surface < 500.000 | Gini:0.182 | Instance:46
+||||--Minimum Distance to Road < 5.000 | Gini:0.101 | Instance:33
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 750.000 | Gini:0.185 | Instance:13
+|||||--[1]
+|||||--[0]
+|||--Water Reservoir Surface < 500.000 | Gini:0.000 | Instance:1
+||||--[1]
+||||--[1]
+|--Water Reservoir Surface < 30000.000 | Gini:0.333 | Instance:12
+||--Water Reservoir Surface < 25000.000 | Gini:0.000 | Instance:4
+|||--Water Reservoir Surface < 19300.000 | Gini:0.000 | Instance:2
+||||--Water Reservoir Surface < 16000.000 | Gini:0.000 | Instance:1
+|||||--[1]
+|||||--[1]
+||||--Water Reservoir Surface < 19300.000 | Gini:0.000 | Instance:1
+|||||--[1]
+|||||--[1]
+|||--Water Reservoir Surface < 25000.000 | Gini:0.000 | Instance:2
+||||--[1]
+||||--[1]
+||--Number of Reservoir < 5.000 | Gini:0.333 | Instance:8
+|||--The Third Most Dominant Land Type < 6.000 | Gini:0.222 | Instance:6
+||||--The Most Dominant Land Type < 2.000 | Gini:0.000 | Instance:3
+|||||--[1]
+|||||--[0]
+||||--Water Reservoir Surface < 80000.000 | Gini:0.000 | Instance:3
+|||||--[1]
+|||||--[1]
+|||--Water Reservoir Surface < 31000.000 | Gini:0.000 | Instance:2
+||||--[0]
+||||--[0]
+Accuracy 0.585
+
+Decision Tree for Tree frog
+--Minimum Distance to Building < 10.000 | Gini:0.435 | Instance:124
+|--Presence of Vegetation < 3.000 | Gini:0.433 | Instance:120
+||--Type of Reservoir < 2.000 | Gini:0.372 | Instance:77
+|||--The Most Dominant Land Type < 10.000 | Gini:0.397 | Instance:47
+||||--The Second Most Dominant Land Type < 2.000 | Gini:0.363 | Instance:41
+|||||--[1]
+|||||--[0]
+||||--Water Reservoir Surface < 115000.000 | Gini:0.000 | Instance:6
+|||||--[1]
+|||||--[0]
+|||--The Second Most Dominant Land Type < 11.000 | Gini:0.179 | Instance:30
+||||--The Most Dominant Land Type < 7.000 | Gini:0.172 | Instance:29
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+|||||--[1]
+|||||--[1]
+||--The Most Dominant Land Type < 7.000 | Gini:0.455 | Instance:43
+|||--Minimum Distance to Building < 9.000 | Gini:0.440 | Instance:28
+||||--Water Reservoir Surface < 1000.000 | Gini:0.406 | Instance:26
+|||||--[0]
+|||||--[1]
+||||--Water Reservoir Surface < 8000.000 | Gini:0.000 | Instance:2
+|||||--[0]
+|||||--[0]
+|||--Type of Reservoir < 14.000 | Gini:0.311 | Instance:15
+||||--Precentage Access to Undeveloped Area < 50.000 | Gini:0.152 | Instance:12
+|||||--[1]
+|||||--[0]
+||||--Type of Reservoir < 15.000 | Gini:0.333 | Instance:3
+|||||--[0]
+|||||--[1]
+|--Water Reservoir Surface < 30000.000 | Gini:0.000 | Instance:4
+||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:3
+|||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:1
+||||--[1]
+||||--[1]
+|||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:2
+||||--[1]
+||||--[1]
+||--Water Reservoir Surface < 30000.000 | Gini:0.000 | Instance:1
+|||--[1]
+|||--[1]
+Accuracy 0.615
+
+Decision Tree for Common newt
+--Water Reservoir Surface < 350.000 | Gini:0.356 | Instance:124
+|--Presence of Fishing < 4.000 | Gini:0.156 | Instance:42
+||--Minimum Distance to Road < 5.000 | Gini:0.120 | Instance:40
+|||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:25
+||||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:3
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:22
+|||||--[0]
+|||||--[0]
+|||--Maintenance Status of Reservoir < 2.000 | Gini:0.229 | Instance:15
+||||--Type of Reservoir < 14.000 | Gini:0.171 | Instance:14
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+|||||--[1]
+|||||--[1]
+||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:2
+|||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:1
+||||--[1]
+||||--[1]
+|||--Water Reservoir Surface < 300.000 | Gini:0.000 | Instance:1
+||||--[0]
+||||--[0]
+|--Water Reservoir Surface < 3800.000 | Gini:0.413 | Instance:82
+||--The Third Most Dominant Land Type < 9.000 | Gini:0.443 | Instance:55
+|||--Presence of Vegetation < 1.000 | Gini:0.403 | Instance:34
+||||--The Most Dominant Land Type < 10.000 | Gini:0.000 | Instance:7
+|||||--[0]
+|||||--[1]
+||||--Type of Reservoir < 2.000 | Gini:0.381 | Instance:27
+|||||--[1]
+|||||--[0]
+|||--Presence of Fishing < 1.000 | Gini:0.260 | Instance:21
+||||--Water Reservoir Surface < 600.000 | Gini:0.000 | Instance:10
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 1100.000 | Gini:0.388 | Instance:11
+|||||--[1]
+|||||--[0]
+||--Presence of Fishing < 3.000 | Gini:0.230 | Instance:27
+|||--Water Reservoir Surface < 16000.000 | Gini:0.269 | Instance:18
+||||--Presence of Vegetation < 1.000 | Gini:0.111 | Instance:12
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 80000.000 | Gini:0.400 | Instance:6
+|||||--[1]
+|||||--[0]
+|||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:9
+||||--Water Reservoir Surface < 4000.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 7000.000 | Gini:0.000 | Instance:8
+|||||--[0]
+|||||--[0]
+Accuracy 0.631
+
+Decision Tree for Great crested newt
+--Water Reservoir Surface < 400.000 | Gini:0.116 | Instance:124
+|--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:45
+||--Water Reservoir Surface < 100.000 | Gini:0.000 | Instance:7
+|||--[0]
+|||--[0]
+||--Water Reservoir Surface < 200.000 | Gini:0.000 | Instance:38
+|||--[0]
+|||--[0]
+|--Water Reservoir Surface < 750.000 | Gini:0.174 | Instance:79
+||--Number of Reservoir < 2.000 | Gini:0.254 | Instance:19
+|||--Use of Water Reservoir < 1.000 | Gini:0.167 | Instance:16
+||||--Water Reservoir Surface < 600.000 | Gini:0.000 | Instance:10
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 500.000 | Gini:0.267 | Instance:6
+|||||--[1]
+|||||--[0]
+|||--Water Reservoir Surface < 600.000 | Gini:0.000 | Instance:3
+||||--Water Reservoir Surface < 400.000 | Gini:0.000 | Instance:1
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 600.000 | Gini:0.000 | Instance:2
+|||||--[1]
+|||||--[1]
+||--Presence of Vegetation < 3.000 | Gini:0.110 | Instance:60
+|||--Water Reservoir Surface < 750.000 | Gini:0.000 | Instance:37
+||||--[0]
+||||--[0]
+|||--Use of Water Reservoir < 1.000 | Gini:0.225 | Instance:23
+||||--Water Reservoir Surface < 4300.000 | Gini:0.206 | Instance:22
+|||||--[0]
+|||||--[0]
+||||--Water Reservoir Surface < 30000.000 | Gini:0.000 | Instance:1
+|||||--[1]
+|||||--[1]
+Accuracy 0.800
+
+Final Accuracy 0.644
+
