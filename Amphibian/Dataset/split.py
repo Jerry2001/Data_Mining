@@ -84,3 +84,5 @@ mask = [(i in testingIndex) for i in range(189)]
 
 (mainDF.loc[mask]).to_csv('preprocesstrain.csv', index = False)
 (binCSV.loc[mask]).to_csv('binarytrain.csv', index = False)
+
+(binCSV).to_csv('binary.csv', index = False)
