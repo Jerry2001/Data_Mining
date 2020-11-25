@@ -12,6 +12,11 @@ fileLabel =["gf", "bf", "ct", "ft", "tf", "cn", "gn"]
 label = ("Green frog", "Brown frog", "Common toad", "Fire-bellied toad", "Tree frog", "Common newt", "Great crested newt")
 trainData = pd.read_csv("../Dataset/preprocesstrain.csv", delimiter=",") 
 
+for column in (trainData.columns):
+	if(column == "label"): break
+	trainData[column] = trainData[column].apply(lambda x: (x*1.0 - trainData[column].min()) / 
+		(trainData[column].max() - trainData[column].min()))
+
 attributeTrain = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in trainData.itertuples())
 labelTrain = []
 labelTrain.append(list((row._15) for row in trainData.itertuples()))
@@ -23,6 +28,11 @@ labelTrain.append(list((row._20) for row in trainData.itertuples()))
 labelTrain.append(list((row._21) for row in trainData.itertuples()))
 
 testData = pd.read_csv("../Dataset/preprocesstest.csv", delimiter=",") 
+
+for column in (testData.columns):
+	if(column == "label"): break
+	testData[column] = testData[column].apply(lambda x: (x*1.0 - testData[column].min()) / 
+		(testData[column].max() - testData[column].min()))
 
 attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
 labelTest = []
