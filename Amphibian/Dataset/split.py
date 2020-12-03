@@ -66,8 +66,8 @@ for row in binRow:
 #print(len(binRow), len(set(binRow)))
 #binRow.sort()
 #print(binRow)
-#for label in set(binRow):
-	#print(label, binRow.count(label)) 
+#for label in set(binLabel):
+#	print(label, binLabel.count(label)) 
 #print(testingIndex, len(testingIndex))
 
 mainDF = pd.read_csv("dataset.csv", delimiter=";", skiprows = 1) 

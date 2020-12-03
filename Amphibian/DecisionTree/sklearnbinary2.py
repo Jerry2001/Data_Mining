@@ -91,11 +91,10 @@ treeClassifier = treeClassifier.fit(attributeTrain, labelTrain)
 labelPredict = treeClassifier.predict(attributeTest)
 print("Accuracy", end = ": ")
 print(accuracyCalc(labelTest, labelPredict))
-#diagramClass = ["Not " + label, label]
-#file = fileLabel + ".dot"
+#file = "binary.dot"
 
-#tree.export_graphviz(treeClassifier, out_file=file, feature_names = attribute, class_names = diagramClass, filled=True, rounded=True, special_characters=True)
-#call(['dot', '-Tpng', file, '-o', label + '.png', '-Gdpi=600'])
+#tree.export_graphviz(treeClassifier, out_file=file, feature_names = attribute, class_names = True, filled=True, rounded=True, special_characters=True)
+#call(['dot', '-Tpng', file, '-o', 'binary.png', '-Gdpi=600'])
 
 labelPredict = treeClassifier.predict(attributeTrain)
 print("*" + str(accuracyCalc(labelTrain, labelPredict)))
