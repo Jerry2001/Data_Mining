@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 
 from sklearn.neural_network import MLPClassifier
+from sklearn.model_selection import KFold
 
 def accuracyCalc(label, predict):
 	match = 0
@@ -18,19 +19,42 @@ def accuracyCalc(label, predict):
 		#print(u, v, curAccuracy / 7.0)
 	return (match * 1.0 / (len(label) * 7))
 
-trainData = pd.read_csv("../Dataset/binarytrain.csv", delimiter=",") 
+def validationAccuracy():
+	trainData = pd.read_csv("../Dataset/binarytrain.csv", delimiter=",") 
 
-attributeTrain = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in trainData.itertuples())
-labelTrain = [(row.label) for row in trainData.itertuples()]
+	attributeTrain = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in trainData.itertuples())
+	labelTrain = [(row.label) for row in trainData.itertuples()]
 
-testData = pd.read_csv("../Dataset/binarytest.csv", delimiter=",") 
+	testData = pd.read_csv("../Dataset/binarytest.csv", delimiter=",") 
 
-attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
-labelTest = [(row.label) for row in testData.itertuples()]
+	attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
+	labelTest = [(row.label) for row in testData.itertuples()]
 
-network = MLPClassifier(hidden_layer_sizes = (20, 9), solver='lbfgs', random_state = 1)
-network.fit(attributeTrain, labelTrain)
+	network = MLPClassifier(hidden_layer_sizes = (20, 9), solver='lbfgs', random_state = 1)
+	network.fit(attributeTrain, labelTrain)
 
-labelPredict = network.predict(attributeTest)
-print("Accuracy", end = ": ")
-print(accuracyCalc(labelTest, labelPredict))
+	labelPredict = network.predict(attributeTest)
+	print("Accuracy", end = ": ")
+	print(accuracyCalc(labelTest, labelPredict))
+
+def kFoldAccuracy():
+	data = pd.read_csv("../Dataset/binary.csv", delimiter=",")
+	kf = KFold(n_splits = len(data), random_state = None, shuffle = False)
+	totalAccuracy = 0.0
+	for train_index, test_index in kf.split(data):
+		trainData = data.iloc[train_index]
+		testData = data.iloc[test_index]
+		attributeTrain = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in trainData.itertuples())
+		labelTrain = [(row.label) for row in trainData.itertuples()]
+		attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
+		labelTest = [(row.label) for row in testData.itertuples()]
+		network = MLPClassifier(hidden_layer_sizes = (20, 9), solver='lbfgs', random_state = 1)
+		network = network.fit(attributeTrain, labelTrain)
+		labelPredict = network.predict(attributeTest)
+		print("Accuracy", end = ": ")
+		print(accuracyCalc(labelTest, labelPredict))
+		#labelPredict = network.predict(attributeTrain)
+		#print("*" + str(accuracyCalc(labelTrain, labelPredict)))
+		totalAccuracy += accuracyCalc(labelTest, labelPredict)
+	totalAccuracy /= 189
+	print(totalAccuracy)
