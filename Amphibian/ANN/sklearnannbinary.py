@@ -38,6 +38,16 @@ def validationAccuracy():
 	attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
 	labelTest = [(row.label) for row in testData.itertuples()]
 
+	for column in (trainData.columns):
+		if(column == "label"): break
+		trainData[column] = trainData[column].apply(lambda x: (x*1.0 - trainData[column].min()) / 
+			(trainData[column].max() - trainData[column].min()))
+
+	for column in (testData.columns):
+		if(column == "label"): break
+		testData[column] = testData[column].apply(lambda x: (x*1.0 - testData[column].min()) / 
+			(testData[column].max() - testData[column].min()))
+
 	network = MLPClassifier(hidden_layer_sizes = (20, 9), solver='lbfgs', random_state = 1)
 	network.fit(attributeTrain, labelTrain)
 
@@ -56,6 +66,15 @@ def kFoldAccuracy():
 		labelTrain = [(row.label) for row in trainData.itertuples()]
 		attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
 		labelTest = [(row.label) for row in testData.itertuples()]
+		for column in (trainData.columns):
+			if(column == "label"): break
+			trainData[column] = trainData[column].apply(lambda x: (x*1.0 - trainData[column].min()) / 
+				(trainData[column].max() - trainData[column].min()))
+
+		for column in (testData.columns):
+			if(column == "label"): break
+			testData[column] = testData[column].apply(lambda x: (x*1.0 - testData[column].min()) / 
+				(testData[column].max() - testData[column].min()))
 		network = MLPClassifier(hidden_layer_sizes = (20, 9), solver='lbfgs', random_state = 1)
 		network = network.fit(attributeTrain, labelTrain)
 		labelPredict = network.predict(attributeTest)
@@ -66,3 +85,5 @@ def kFoldAccuracy():
 		totalAccuracy += accuracyCalc(labelTest, labelPredict)
 	totalAccuracy /= 189
 	print(totalAccuracy)
+
+validationAccuracy()

@@ -92,7 +92,18 @@ def validationAccuracy():
 
 	attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
 	labelTest = [(row.label) for row in testData.itertuples()]
+
 	totalAccuracy = 0.0
+
+	for column in (trainData.columns):
+		if(column == "label"): break
+		trainData[column] = trainData[column].apply(lambda x: (x*1.0 - trainData[column].min()) / 
+			(trainData[column].max() - trainData[column].min()))
+
+	for column in (testData.columns):
+		if(column == "label"): break
+		testData[column] = testData[column].apply(lambda x: (x*1.0 - testData[column].min()) / 
+			(testData[column].max() - testData[column].min()))
 
 	treeClassifier = tree.DecisionTreeClassifier(max_depth = 4)
 	treeClassifier = treeClassifier.fit(attributeTrain, labelTrain)
@@ -121,6 +132,17 @@ def kFoldAccuracy():
 		labelTrain = [(row.label) for row in trainData.itertuples()]
 		attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
 		labelTest = [(row.label) for row in testData.itertuples()]
+
+		for column in (trainData.columns):
+			if(column == "label"): break
+			trainData[column] = trainData[column].apply(lambda x: (x*1.0 - trainData[column].min()) / 
+				(trainData[column].max() - trainData[column].min()))
+
+		for column in (testData.columns):
+			if(column == "label"): break
+			testData[column] = testData[column].apply(lambda x: (x*1.0 - testData[column].min()) / 
+				(testData[column].max() - testData[column].min()))
+		
 		treeClassifier = tree.DecisionTreeClassifier(max_depth = 4)
 		treeClassifier = treeClassifier.fit(attributeTrain, labelTrain)
 		labelPredict = treeClassifier.predict(attributeTest)
