@@ -4,11 +4,12 @@ from sklearn import svm
 from sklearn.metrics import accuracy_score 
 from sklearn.metrics import classification_report 
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix 
 from sklearn.model_selection import KFold
 
 def accuracyCalc(label, predict):
-	if(not isinstance(label, list)): label = list(label['label'])
 	match = 0
+	confusion_label = [[[], []] for i in range(7)]
 	for i in range(len(label)):
 		curAccuracy = 0
 		u = str(label[i])
@@ -16,10 +17,15 @@ def accuracyCalc(label, predict):
 		u = (7 - len(u)) * "0" + u
 		v = (7 - len(v)) * "0" + v
 		for j in range(len(u)):
+			confusion_label[j][0].append(u[j])
+			confusion_label[j][1].append(v[j])
 			if(u[j] == v[j]): 
 				match += 1
 				curAccuracy += 1
 		#print(u, v, curAccuracy / 7.0)
+	for i in range(7):
+		print(("Green frog", "Brown frog", "Common toad", "Fire-bellied toad", "Tree frog", "Common newt", "Great crested newt")[i])
+		print(confusion_matrix(confusion_label[i][0], confusion_label[i][1], labels = ["0", "1"]))
 	return (match * 1.0 / (len(label) * 7))
 
 def validationAccuracy():
