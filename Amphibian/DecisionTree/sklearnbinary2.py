@@ -5,6 +5,7 @@ from sklearn import tree
 from sklearn.metrics import accuracy_score 
 from sklearn.metrics import classification_report 
 from sklearn.metrics import confusion_matrix 
+from sklearn.model_selection import KFold
 
 labelPredict = []
 attribute = ["Water Reservoir Surface", "Number of Reservoir", "Type of Reservoir", "Presence of Vegetation", "The Most Dominant Land Type"
@@ -29,17 +30,6 @@ def accuracyCalc(label, predict):
 				curAccuracy += 1
 		#print(u, v, curAccuracy / 7.0)
 	return (match * 1.0 / (len(label) * 7))
-
-trainData = pd.read_csv("../Dataset/binarytrain.csv", delimiter=",") 
-
-attributeTrain = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in trainData.itertuples())
-labelTrain = [(row.label) for row in trainData.itertuples()]
-
-testData = pd.read_csv("../Dataset/binarytest.csv", delimiter=",") 
-
-attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
-labelTest = [(row.label) for row in testData.itertuples()]
-totalAccuracy = 0.0
 
 def analTree(tree, nodePath):
 	global labelPredict
@@ -86,18 +76,52 @@ def analTree(tree, nodePath):
 		if(totalNode[i] > 0): print("- Accuracy: %.3f" % ((totalMisclassify[i] * 1.0 / totalNode[i] * 100.0)))		
 		else: print()
 
-treeClassifier = tree.DecisionTreeClassifier(max_depth = 4)
-treeClassifier = treeClassifier.fit(attributeTrain, labelTrain)
-labelPredict = treeClassifier.predict(attributeTest)
-print("Accuracy", end = ": ")
-print(accuracyCalc(labelTest, labelPredict))
-#file = "binary.dot"
+def validationAccuracy():
+	trainData = pd.read_csv("../Dataset/binarytrain.csv", delimiter=",") 
 
-#tree.export_graphviz(treeClassifier, out_file=file, feature_names = attribute, class_names = True, filled=True, rounded=True, special_characters=True)
-#call(['dot', '-Tpng', file, '-o', 'binary.png', '-Gdpi=600'])
+	attributeTrain = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in trainData.itertuples())
+	labelTrain = [(row.label) for row in trainData.itertuples()]
 
-labelPredict = treeClassifier.predict(attributeTrain)
-print("*" + str(accuracyCalc(labelTrain, labelPredict)))
+	testData = pd.read_csv("../Dataset/binarytest.csv", delimiter=",") 
 
-#analTree(treeClassifier, treeClassifier.decision_path(attributeTest))
-print()
+	attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
+	labelTest = [(row.label) for row in testData.itertuples()]
+	totalAccuracy = 0.0
+
+	treeClassifier = tree.DecisionTreeClassifier(max_depth = 4)
+	treeClassifier = treeClassifier.fit(attributeTrain, labelTrain)
+	labelPredict = treeClassifier.predict(attributeTest)
+	print("Accuracy", end = ": ")
+	print(accuracyCalc(labelTest, labelPredict))
+	#file = "binary.dot"
+
+	#tree.export_graphviz(treeClassifier, out_file=file, feature_names = attribute, class_names = True, filled=True, rounded=True, special_characters=True)
+	#call(['dot', '-Tpng', file, '-o', 'binary.png', '-Gdpi=600'])
+
+	labelPredict = treeClassifier.predict(attributeTrain)
+	print("*" + str(accuracyCalc(labelTrain, labelPredict)))
+
+	#analTree(treeClassifier, treeClassifier.decision_path(attributeTest))
+	print()
+
+def kFoldAccuracy():
+	data = pd.read_csv("../Dataset/binary.csv", delimiter=",")
+	kf = KFold(n_splits = len(data), random_state = None, shuffle = False)
+	totalAccuracy = 0.0
+	for train_index, test_index in kf.split(data):
+		trainData = data.iloc[train_index]
+		testData = data.iloc[test_index]
+		attributeTrain = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in trainData.itertuples())
+		labelTrain = [(row.label) for row in trainData.itertuples()]
+		attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
+		labelTest = [(row.label) for row in testData.itertuples()]
+		treeClassifier = tree.DecisionTreeClassifier(max_depth = 4)
+		treeClassifier = treeClassifier.fit(attributeTrain, labelTrain)
+		labelPredict = treeClassifier.predict(attributeTest)
+		print("Accuracy", end = ": ")
+		print(accuracyCalc(labelTest, labelPredict))
+		#labelPredict = treeClassifier.predict(attributeTrain)
+		#print("*" + str(accuracyCalc(labelTrain, labelPredict)))
+		totalAccuracy += accuracyCalc(labelTest, labelPredict)
+	totalAccuracy /= 189
+	print(totalAccuracy)
