@@ -63,11 +63,15 @@ for row in binRow:
 	else:
 		curDifference.append(row) 
 
-#print(len(binRow), len(set(binRow)))
+#rint(len(binRow), len(set(binRow)))
 #binRow.sort()
 #print(binRow)
-#for label in set(binLabel):
-#	print(label, binLabel.count(label)) 
+# count = 0
+# for label in set(binLabel):
+# 	count %= 4
+# 	count += 1
+# 	print(label, binLabel.count(label), end = "  ") 
+# 	if(count == 4): print()
 #print(testingIndex, len(testingIndex))
 
 mainDF = pd.read_csv("dataset.csv", delimiter=";", skiprows = 1) 

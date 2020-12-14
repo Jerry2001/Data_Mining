@@ -62,7 +62,7 @@ def kFoldAccuracy():
 	for train_index, test_index in kf.split(data):
 		trainData = data.iloc[train_index]
 		testData = data.iloc[test_index]
-		
+		'''
 		for column in (trainData.columns):
 			if(column == "label"): break
 			trainData[column] = trainData[column].apply(lambda x: (x*1.0 - trainData[column].min()) / 
@@ -72,7 +72,7 @@ def kFoldAccuracy():
 			if(column == "label"): break
 			testData[column] = testData[column].apply(lambda x: (x*1.0 - testData[column].min()) / 
 				(testData[column].max() - testData[column].min()))
-
+		'''
 		attributeTrain = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in trainData.itertuples())
 		labelTrain = [(row.label) for row in trainData.itertuples()]
 		attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
@@ -89,4 +89,4 @@ def kFoldAccuracy():
 	totalAccuracy /= 189
 	print(totalAccuracy)
 
-validationAccuracy()
+kFoldAccuracy()
