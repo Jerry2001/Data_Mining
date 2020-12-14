@@ -3,6 +3,7 @@ from subprocess import call
 from sklearn import svm
 from sklearn.metrics import accuracy_score 
 from sklearn.metrics import classification_report 
+from sklearn.metrics import confusion_matrix
 
 attribute = ["Water Reservoir Surface", "Number of Reservoir", "Type of Reservoir", "Presence of Vegetation", "The Most Dominant Land Type"
 , "The Second Most Dominant Land Type", "The Third Most Dominant Land Type", "Use of Water Reservoir", "Presence of Fishing", "Precentage Access to Undeveloped Area"
@@ -48,10 +49,13 @@ totalAccuracy = 0.0
 for index in range(7):
 	svmClassifier = svm.SVC()
 	svmClassifier = svmClassifier.fit(attributeTrain, labelTrain[index])
-	#print(labelTrain[index])
 	labelPredict = svmClassifier.predict(attributeTest)
 	totalAccuracy += accuracy_score(labelTest[index], labelPredict) * 100
 	print(label[index], end = ": ")
 	print(accuracy_score(labelTest[index], labelPredict) * 100)
+	labelTest[index] = list(map(lambda a: int(a), labelTest[index]))
+	labelPredict = list(map(lambda a: int(a), labelPredict))
+	#print(labelTest[index], labelPredict)
+	print(confusion_matrix(labelTest[index], labelPredict, labels = [0, 1]))
 totalAccuracy /= 7
 print("\nAverage accuracy: " + str(totalAccuracy))
