@@ -91,14 +91,15 @@ for index in range(7):
 	print(accuracy_score(labelTest[index], labelPredict) * 100)
 	diagramClass = ["Not " + label[index], label[index]]
 	file = fileLabel[index] + ".dot"
+	print(confusion_matrix(labelTest[index], labelPredict, labels = [0, 1]))
 	
 	#tree.export_graphviz(treeClassifier, out_file=file, feature_names = attribute, class_names = diagramClass, filled=True, rounded=True, special_characters=True)
 	#call(['dot', '-Tpng', file, '-o', label[index] + '.png', '-Gdpi=600'])
 	
-	labelPredict = treeClassifier.predict(attributeTrain)
-	print("*" + str(accuracy_score(labelTrain[index], labelPredict) * 100))
+	#labelPredict = treeClassifier.predict(attributeTrain)
+	#print("*" + str(accuracy_score(labelTrain[index], labelPredict) * 100))
 
-	analTree(treeClassifier, treeClassifier.decision_path(attributeTest), index)
+	#analTree(treeClassifier, treeClassifier.decision_path(attributeTest), index)
 	print()
 
 totalAccuracy /= 7

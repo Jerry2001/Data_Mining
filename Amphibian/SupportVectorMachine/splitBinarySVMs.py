@@ -29,7 +29,7 @@ labelTrain = labelTrain[trainData.columns[-7:]]
 labelTest = labelTest[trainData.columns[-7:]]
 
 for label in labelTest.columns:
-	svmClassifier = svm.SVC(C = 1, kernel='rbf', degree = 5)
+	svmClassifier = svm.SVC(C = 1, kernel='rbf', degree = 3)
 	svmClassifier = svmClassifier.fit(attributeTrain, labelTrain[label])
 	labelPredict = svmClassifier.predict(attributeTest)
 	totalAccuracy += accuracy_score(labelTest[label], labelPredict) * 100
@@ -39,5 +39,6 @@ for label in labelTest.columns:
 	labelPredict = list(map(lambda a: int(a), labelPredict))
 	#print(labelTest[label], labelPredict)
 	print(confusion_matrix(labelTest[label], labelPredict, labels = [0, 1]))
+	print()
 totalAccuracy /= 7
-print("\nAverage accuracy: " + str(totalAccuracy))
+print("Average accuracy: " + str(totalAccuracy))
