@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-
+from sklearn.metrics import confusion_matrix 
 from sklearn.metrics import accuracy_score 
 from sklearn.neural_network import MLPClassifier
 
@@ -54,5 +54,8 @@ for index in range(7):
 	totalAccuracy += accuracy_score(labelTest[index], labelPredict) * 100
 	print(label[index], end = ": ")
 	print(accuracy_score(labelTest[index], labelPredict) * 100)
+	print(confusion_matrix(labelTest[index], labelPredict, labels = [0, 1]))
+	print()
+
 totalAccuracy /= 7
-print("\nAverage accuracy: " + str(totalAccuracy))
+print("Average accuracy: " + str(totalAccuracy))
