@@ -41,7 +41,7 @@ def validationAccuracy():
 	labelTest = [(row.label) for row in testData.itertuples()]
 	totalAccuracy = 0.0
 
-	svmClassifier = svm.SVC()
+	svmClassifier = svm.SVC(C = 1e5)
 	svmClassifier = svmClassifier.fit(attributeTrain, list(labelTrain))
 	#print(labelTrain[index])
 	labelPredict = svmClassifier.predict(attributeTest)
@@ -61,7 +61,7 @@ def kFoldAccuracy():
 		attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
 		labelTest = [(row.label) for row in testData.itertuples()]
 		
-		svmClassifier = svm.SVC()
+		svmClassifier = svm.SVC(C = 1e5)
 		svmClassifier = svmClassifier.fit(attributeTrain, labelTrain)
 		labelPredict = svmClassifier.predict(attributeTest)
 		print("Accuracy", end = ": ")
@@ -72,4 +72,4 @@ def kFoldAccuracy():
 	totalAccuracy /= 189
 	print(totalAccuracy)
 
-validationAccuracy()
+kFoldAccuracy()
