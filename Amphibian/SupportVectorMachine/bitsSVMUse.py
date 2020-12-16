@@ -26,6 +26,7 @@ def accuracyCalc(label, predict):
 	for i in range(7):
 		print(("Green frog", "Brown frog", "Common toad", "Fire-bellied toad", "Tree frog", "Common newt", "Great crested newt")[i])
 		print(confusion_matrix(confusion_label[i][0], confusion_label[i][1], labels = ["0", "1"]))
+		print()
 	return (match * 1.0 / (len(label) * 7))
 
 def validationAccuracy():

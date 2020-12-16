@@ -8,8 +8,10 @@ labels = ("Green frog", "Brown frog", "Common toad", "Fire-bellied toad", "Tree 
 print("Train Amphibian Quantity:")
 for label in trainData.columns[-7:]:
 	print("Numer of %s is %i" % (label, len(trainData[trainData[label] == 1])))
+print("Number of instance in training: %i"%len(trainData))
 
 print("\nTest Amphibian Quantity:")
 for label in testData.columns[-7:]:
 	print("Numer of %s is %i" % (label, len(testData[testData[label] == 1])))
+print("Number of instance in testing: %i"%len(testData))
 
