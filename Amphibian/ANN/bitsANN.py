@@ -49,12 +49,12 @@ def validationAccuracy():
 	attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
 	labelTest = [(row.label) for row in testData.itertuples()]
 
-	network = MLPClassifier(hidden_layer_sizes = (20, 9), solver='lbfgs', random_state = 1)
+	
+	network = MLPClassifier(hidden_layer_sizes = (21, 3), solver='lbfgs', alpha = 1e-5, random_state = 1, max_iter = 2000)
 	network.fit(attributeTrain, labelTrain)
-
 	labelPredict = network.predict(attributeTest)
 	print("Accuracy", end = ": ")
-	print(accuracyCalc(labelTest, labelPredict))
+	print(accuracyCalc(labelTest, labelPredict) * 100)
 
 def kFoldAccuracy():
 	data = pd.read_csv("../Dataset/binary.csv", delimiter=",")
@@ -63,23 +63,13 @@ def kFoldAccuracy():
 	for train_index, test_index in kf.split(data):
 		trainData = data.iloc[train_index]
 		testData = data.iloc[test_index]
-		'''
-		for column in (trainData.columns):
-			if(column == "label"): break
-			trainData[column] = trainData[column].apply(lambda x: (x*1.0 - trainData[column].min()) / 
-				(trainData[column].max() - trainData[column].min()))
 
-		for column in (testData.columns):
-			if(column == "label"): break
-			testData[column] = testData[column].apply(lambda x: (x*1.0 - testData[column].min()) / 
-				(testData[column].max() - testData[column].min()))
-		'''
 		attributeTrain = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in trainData.itertuples())
 		labelTrain = [(row.label) for row in trainData.itertuples()]
 		attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
 		labelTest = [(row.label) for row in testData.itertuples()]
 		
-		network = MLPClassifier(hidden_layer_sizes = (20, 9), solver='lbfgs', random_state = 1)
+		network = MLPClassifier(hidden_layer_sizes = (8, 6), solver='lbfgs', random_state = 1)
 		network = network.fit(attributeTrain, labelTrain)
 		labelPredict = network.predict(attributeTest)
 		print("Accuracy", end = ": ")
@@ -87,7 +77,6 @@ def kFoldAccuracy():
 		#labelPredict = network.predict(attributeTrain)
 		#print("*" + str(accuracyCalc(labelTrain, labelPredict)))
 		totalAccuracy += accuracyCalc(labelTest, labelPredict)
-	totalAccuracy /= 189
 	print(totalAccuracy)
 
 validationAccuracy()
