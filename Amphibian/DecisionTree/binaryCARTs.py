@@ -1,7 +1,7 @@
 from csv import reader
 import pandas as pd
 
-stdin = open('BinaryHashDecisionTree.txt', 'w')#open('ManyDecisionTree.txt', 'w')
+stdout = open('BinaryHashDecisionTree.txt', 'w')#open('ManyDecisionTree.txt', 'w')
 
 
 def loadCSV(filename):

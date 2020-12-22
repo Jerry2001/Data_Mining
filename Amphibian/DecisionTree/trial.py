@@ -34,9 +34,8 @@ def accuracyCalc(label, predict):
 				curAccuracy += 1
 		#print(u, v, curAccuracy / 7.0)
 	for i in range(7):
-		print(("Green frog", "Brown frog", "Common toad", "Fire-bellied toad", "Tree frog", "Common newt", "Great crested newt")[i], file = stdout)
-		print(confusion_matrix(confusion_label[i][0], confusion_label[i][1], labels = ["0", "1"]), file = stdout)
-		print(file = stdout)	
+		print(("Green frog", "Brown frog", "Common toad", "Fire-bellied toad", "Tree frog", "Common newt", "Great crested newt")[i])
+		print(confusion_matrix(confusion_label[i][0], confusion_label[i][1], labels = ["0", "1"]))
 	return (match * 1.0 / (len(label) * 7))
 
 def analTree(tree, nodePath):
@@ -85,13 +84,6 @@ def analTree(tree, nodePath):
 		else: print()
 
 def validationAccuracy():
-	stdout = open('bintree.txt', 'w')
-	
-	depths = [None, 2, 3, 4, 5]
-	crits = ["gini", "entropy"]
-	maxFeatures = [None, "auto", "sqrt", "log2"]
-	weights = [None, "balanced"]
-
 	trainData = pd.read_csv("../Dataset/binarytrain.csv", delimiter=",") 
 
 	attributeTrain = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in trainData.itertuples())
@@ -103,27 +95,22 @@ def validationAccuracy():
 	labelTest = [(row.label) for row in testData.itertuples()]
 
 	totalAccuracy = 0.0
-	for depth_ in depths:
-			for crit_ in crits:
-				for maxFeature_ in maxFeatures:
-					for weight_ in weights:
-						print("Depth: %s, Criteria: %s, Max Feature: %s, Weight: %s"%(depth_, crit_, maxFeature_, weight_), file = stdout)
-						print("[%s, '%s', '%s', '%s'],"%(depth_, crit_, maxFeature_, weight_), file = stdout)
-						treeClassifier = tree.DecisionTreeClassifier(criterion = crit_,max_depth = depth_, max_features = maxFeature_, class_weight = weight_)
-						treeClassifier = treeClassifier.fit(attributeTrain, labelTrain)
-						labelPredict = treeClassifier.predict(attributeTest)
-						print("Accuracy", end = ": ", file = stdout)
-						print(accuracyCalc(labelTest, labelPredict), file = stdout)
-						#file = "binary.dot"
 
-						#tree.export_graphviz(treeClassifier, out_file=file, feature_names = attribute, class_names = True, filled=True, rounded=True, special_characters=True)
-						#call(['dot', '-Tpng', file, '-o', 'binary.png', '-Gdpi=600'])
+	treeClassifier = tree.DecisionTreeClassifier(criterion = 'gini',max_depth = 2, max_features = 'log2', class_weight = None, random_state=0)
+	treeClassifier = treeClassifier.fit(attributeTrain, labelTrain)
+	labelPredict = treeClassifier.predict(attributeTest)
+	print("Accuracy", end = ": ")
+	print(accuracyCalc(labelTest, labelPredict))
+	#file = "binary.dot"
 
-						#labelPredict = treeClassifier.predict(attributeTrain)
-						#print("*" + str(accuracyCalc(labelTrain, labelPredict)))
+	#tree.export_graphviz(treeClassifier, out_file=file, feature_names = attribute, class_names = True, filled=True, rounded=True, special_characters=True)
+	#call(['dot', '-Tpng', file, '-o', 'binary.png', '-Gdpi=600'])
 
-						#analTree(treeClassifier, treeClassifier.decision_path(attributeTest))
-						print()
+	#labelPredict = treeClassifier.predict(attributeTrain)
+	#print("*" + str(accuracyCalc(labelTrain, labelPredict)))
+
+	#analTree(treeClassifier, treeClassifier.decision_path(attributeTest))
+	print()
 
 def kFoldAccuracy():
 	data = pd.read_csv("../Dataset/binary.csv", delimiter=",")
