@@ -1,0 +1,480 @@
+Depth: None, Criteria: gini, Max Feature: None, Weight: None
+[None, 'gini', 'None', 'None'],
+Great crested newt: 81.53846153846153
+[[51  1]
+ [11  2]]
+
+Depth: None, Criteria: gini, Max Feature: None, Weight: balanced
+[None, 'gini', 'None', 'balanced'],
+Great crested newt: 80.0
+[[51  1]
+ [12  1]]
+
+Depth: None, Criteria: gini, Max Feature: auto, Weight: None
+[None, 'gini', 'auto', 'None'],
+Great crested newt: 78.46153846153847
+[[50  2]
+ [12  1]]
+
+Depth: None, Criteria: gini, Max Feature: auto, Weight: balanced
+[None, 'gini', 'auto', 'balanced'],
+Great crested newt: 84.61538461538461
+[[52  0]
+ [10  3]]
+
+Depth: None, Criteria: gini, Max Feature: sqrt, Weight: None
+[None, 'gini', 'sqrt', 'None'],
+Great crested newt: 75.38461538461539
+[[49  3]
+ [13  0]]
+
+Depth: None, Criteria: gini, Max Feature: sqrt, Weight: balanced
+[None, 'gini', 'sqrt', 'balanced'],
+Great crested newt: 78.46153846153847
+[[51  1]
+ [13  0]]
+
+Depth: None, Criteria: gini, Max Feature: log2, Weight: None
+[None, 'gini', 'log2', 'None'],
+Great crested newt: 80.0
+[[51  1]
+ [12  1]]
+
+Depth: None, Criteria: gini, Max Feature: log2, Weight: balanced
+[None, 'gini', 'log2', 'balanced'],
+Great crested newt: 78.46153846153847
+[[51  1]
+ [13  0]]
+
+Depth: None, Criteria: entropy, Max Feature: None, Weight: None
+[None, 'entropy', 'None', 'None'],
+Great crested newt: 81.53846153846153
+[[52  0]
+ [12  1]]
+
+Depth: None, Criteria: entropy, Max Feature: None, Weight: balanced
+[None, 'entropy', 'None', 'balanced'],
+Great crested newt: 80.0
+[[51  1]
+ [12  1]]
+
+Depth: None, Criteria: entropy, Max Feature: auto, Weight: None
+[None, 'entropy', 'auto', 'None'],
+Great crested newt: 83.07692307692308
+[[50  2]
+ [ 9  4]]
+
+Depth: None, Criteria: entropy, Max Feature: auto, Weight: balanced
+[None, 'entropy', 'auto', 'balanced'],
+Great crested newt: 83.07692307692308
+[[51  1]
+ [10  3]]
+
+Depth: None, Criteria: entropy, Max Feature: sqrt, Weight: None
+[None, 'entropy', 'sqrt', 'None'],
+Great crested newt: 81.53846153846153
+[[51  1]
+ [11  2]]
+
+Depth: None, Criteria: entropy, Max Feature: sqrt, Weight: balanced
+[None, 'entropy', 'sqrt', 'balanced'],
+Great crested newt: 80.0
+[[51  1]
+ [12  1]]
+
+Depth: None, Criteria: entropy, Max Feature: log2, Weight: None
+[None, 'entropy', 'log2', 'None'],
+Great crested newt: 83.07692307692308
+[[51  1]
+ [10  3]]
+
+Depth: None, Criteria: entropy, Max Feature: log2, Weight: balanced
+[None, 'entropy', 'log2', 'balanced'],
+Great crested newt: 80.0
+[[51  1]
+ [12  1]]
+
+Depth: 2, Criteria: gini, Max Feature: None, Weight: None
+[2, 'gini', 'None', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 2, Criteria: gini, Max Feature: None, Weight: balanced
+[2, 'gini', 'None', 'balanced'],
+Great crested newt: 67.6923076923077
+[[37 15]
+ [ 6  7]]
+
+Depth: 2, Criteria: gini, Max Feature: auto, Weight: None
+[2, 'gini', 'auto', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 2, Criteria: gini, Max Feature: auto, Weight: balanced
+[2, 'gini', 'auto', 'balanced'],
+Great crested newt: 69.23076923076923
+[[41 11]
+ [ 9  4]]
+
+Depth: 2, Criteria: gini, Max Feature: sqrt, Weight: None
+[2, 'gini', 'sqrt', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 2, Criteria: gini, Max Feature: sqrt, Weight: balanced
+[2, 'gini', 'sqrt', 'balanced'],
+Great crested newt: 69.23076923076923
+[[34 18]
+ [ 2 11]]
+
+Depth: 2, Criteria: gini, Max Feature: log2, Weight: None
+[2, 'gini', 'log2', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 2, Criteria: gini, Max Feature: log2, Weight: balanced
+[2, 'gini', 'log2', 'balanced'],
+Great crested newt: 32.30769230769231
+[[ 8 44]
+ [ 0 13]]
+
+Depth: 2, Criteria: entropy, Max Feature: None, Weight: None
+[2, 'entropy', 'None', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 2, Criteria: entropy, Max Feature: None, Weight: balanced
+[2, 'entropy', 'None', 'balanced'],
+Great crested newt: 67.6923076923077
+[[37 15]
+ [ 6  7]]
+
+Depth: 2, Criteria: entropy, Max Feature: auto, Weight: None
+[2, 'entropy', 'auto', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 2, Criteria: entropy, Max Feature: auto, Weight: balanced
+[2, 'entropy', 'auto', 'balanced'],
+Great crested newt: 67.6923076923077
+[[37 15]
+ [ 6  7]]
+
+Depth: 2, Criteria: entropy, Max Feature: sqrt, Weight: None
+[2, 'entropy', 'sqrt', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 2, Criteria: entropy, Max Feature: sqrt, Weight: balanced
+[2, 'entropy', 'sqrt', 'balanced'],
+Great crested newt: 61.53846153846154
+[[35 17]
+ [ 8  5]]
+
+Depth: 2, Criteria: entropy, Max Feature: log2, Weight: None
+[2, 'entropy', 'log2', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 2, Criteria: entropy, Max Feature: log2, Weight: balanced
+[2, 'entropy', 'log2', 'balanced'],
+Great crested newt: 52.307692307692314
+[[25 27]
+ [ 4  9]]
+
+Depth: 3, Criteria: gini, Max Feature: None, Weight: None
+[3, 'gini', 'None', 'None'],
+Great crested newt: 78.46153846153847
+[[51  1]
+ [13  0]]
+
+Depth: 3, Criteria: gini, Max Feature: None, Weight: balanced
+[3, 'gini', 'None', 'balanced'],
+Great crested newt: 73.84615384615385
+[[42 10]
+ [ 7  6]]
+
+Depth: 3, Criteria: gini, Max Feature: auto, Weight: None
+[3, 'gini', 'auto', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 3, Criteria: gini, Max Feature: auto, Weight: balanced
+[3, 'gini', 'auto', 'balanced'],
+Great crested newt: 69.23076923076923
+[[34 18]
+ [ 2 11]]
+
+Depth: 3, Criteria: gini, Max Feature: sqrt, Weight: None
+[3, 'gini', 'sqrt', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 3, Criteria: gini, Max Feature: sqrt, Weight: balanced
+[3, 'gini', 'sqrt', 'balanced'],
+Great crested newt: 53.84615384615385
+[[26 26]
+ [ 4  9]]
+
+Depth: 3, Criteria: gini, Max Feature: log2, Weight: None
+[3, 'gini', 'log2', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 3, Criteria: gini, Max Feature: log2, Weight: balanced
+[3, 'gini', 'log2', 'balanced'],
+Great crested newt: 72.3076923076923
+[[40 12]
+ [ 6  7]]
+
+Depth: 3, Criteria: entropy, Max Feature: None, Weight: None
+[3, 'entropy', 'None', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 3, Criteria: entropy, Max Feature: None, Weight: balanced
+[3, 'entropy', 'None', 'balanced'],
+Great crested newt: 73.84615384615385
+[[42 10]
+ [ 7  6]]
+
+Depth: 3, Criteria: entropy, Max Feature: auto, Weight: None
+[3, 'entropy', 'auto', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 3, Criteria: entropy, Max Feature: auto, Weight: balanced
+[3, 'entropy', 'auto', 'balanced'],
+Great crested newt: 73.84615384615385
+[[38 14]
+ [ 3 10]]
+
+Depth: 3, Criteria: entropy, Max Feature: sqrt, Weight: None
+[3, 'entropy', 'sqrt', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 3, Criteria: entropy, Max Feature: sqrt, Weight: balanced
+[3, 'entropy', 'sqrt', 'balanced'],
+Great crested newt: 30.76923076923077
+[[10 42]
+ [ 3 10]]
+
+Depth: 3, Criteria: entropy, Max Feature: log2, Weight: None
+[3, 'entropy', 'log2', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 3, Criteria: entropy, Max Feature: log2, Weight: balanced
+[3, 'entropy', 'log2', 'balanced'],
+Great crested newt: 69.23076923076923
+[[34 18]
+ [ 2 11]]
+
+Depth: 4, Criteria: gini, Max Feature: None, Weight: None
+[4, 'gini', 'None', 'None'],
+Great crested newt: 80.0
+[[51  1]
+ [12  1]]
+
+Depth: 4, Criteria: gini, Max Feature: None, Weight: balanced
+[4, 'gini', 'None', 'balanced'],
+Great crested newt: 78.46153846153847
+[[45  7]
+ [ 7  6]]
+
+Depth: 4, Criteria: gini, Max Feature: auto, Weight: None
+[4, 'gini', 'auto', 'None'],
+Great crested newt: 78.46153846153847
+[[50  2]
+ [12  1]]
+
+Depth: 4, Criteria: gini, Max Feature: auto, Weight: balanced
+[4, 'gini', 'auto', 'balanced'],
+Great crested newt: 76.92307692307693
+[[47  5]
+ [10  3]]
+
+Depth: 4, Criteria: gini, Max Feature: sqrt, Weight: None
+[4, 'gini', 'sqrt', 'None'],
+Great crested newt: 81.53846153846153
+[[51  1]
+ [11  2]]
+
+Depth: 4, Criteria: gini, Max Feature: sqrt, Weight: balanced
+[4, 'gini', 'sqrt', 'balanced'],
+Great crested newt: 81.53846153846153
+[[47  5]
+ [ 7  6]]
+
+Depth: 4, Criteria: gini, Max Feature: log2, Weight: None
+[4, 'gini', 'log2', 'None'],
+Great crested newt: 81.53846153846153
+[[51  1]
+ [11  2]]
+
+Depth: 4, Criteria: gini, Max Feature: log2, Weight: balanced
+[4, 'gini', 'log2', 'balanced'],
+Great crested newt: 76.92307692307693
+[[44  8]
+ [ 7  6]]
+
+Depth: 4, Criteria: entropy, Max Feature: None, Weight: None
+[4, 'entropy', 'None', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 4, Criteria: entropy, Max Feature: None, Weight: balanced
+[4, 'entropy', 'None', 'balanced'],
+Great crested newt: 78.46153846153847
+[[45  7]
+ [ 7  6]]
+
+Depth: 4, Criteria: entropy, Max Feature: auto, Weight: None
+[4, 'entropy', 'auto', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 4, Criteria: entropy, Max Feature: auto, Weight: balanced
+[4, 'entropy', 'auto', 'balanced'],
+Great crested newt: 58.46153846153847
+[[32 20]
+ [ 7  6]]
+
+Depth: 4, Criteria: entropy, Max Feature: sqrt, Weight: None
+[4, 'entropy', 'sqrt', 'None'],
+Great crested newt: 78.46153846153847
+[[50  2]
+ [12  1]]
+
+Depth: 4, Criteria: entropy, Max Feature: sqrt, Weight: balanced
+[4, 'entropy', 'sqrt', 'balanced'],
+Great crested newt: 69.23076923076923
+[[39 13]
+ [ 7  6]]
+
+Depth: 4, Criteria: entropy, Max Feature: log2, Weight: None
+[4, 'entropy', 'log2', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 4, Criteria: entropy, Max Feature: log2, Weight: balanced
+[4, 'entropy', 'log2', 'balanced'],
+Great crested newt: 60.0
+[[29 23]
+ [ 3 10]]
+
+Depth: 5, Criteria: gini, Max Feature: None, Weight: None
+[5, 'gini', 'None', 'None'],
+Great crested newt: 78.46153846153847
+[[50  2]
+ [12  1]]
+
+Depth: 5, Criteria: gini, Max Feature: None, Weight: balanced
+[5, 'gini', 'None', 'balanced'],
+Great crested newt: 76.92307692307693
+[[45  7]
+ [ 8  5]]
+
+Depth: 5, Criteria: gini, Max Feature: auto, Weight: None
+[5, 'gini', 'auto', 'None'],
+Great crested newt: 81.53846153846153
+[[51  1]
+ [11  2]]
+
+Depth: 5, Criteria: gini, Max Feature: auto, Weight: balanced
+[5, 'gini', 'auto', 'balanced'],
+Great crested newt: 78.46153846153847
+[[46  6]
+ [ 8  5]]
+
+Depth: 5, Criteria: gini, Max Feature: sqrt, Weight: None
+[5, 'gini', 'sqrt', 'None'],
+Great crested newt: 78.46153846153847
+[[51  1]
+ [13  0]]
+
+Depth: 5, Criteria: gini, Max Feature: sqrt, Weight: balanced
+[5, 'gini', 'sqrt', 'balanced'],
+Great crested newt: 73.84615384615385
+[[43  9]
+ [ 8  5]]
+
+Depth: 5, Criteria: gini, Max Feature: log2, Weight: None
+[5, 'gini', 'log2', 'None'],
+Great crested newt: 80.0
+[[50  2]
+ [11  2]]
+
+Depth: 5, Criteria: gini, Max Feature: log2, Weight: balanced
+[5, 'gini', 'log2', 'balanced'],
+Great crested newt: 70.76923076923077
+[[42 10]
+ [ 9  4]]
+
+Depth: 5, Criteria: entropy, Max Feature: None, Weight: None
+[5, 'entropy', 'None', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 5, Criteria: entropy, Max Feature: None, Weight: balanced
+[5, 'entropy', 'None', 'balanced'],
+Great crested newt: 76.92307692307693
+[[45  7]
+ [ 8  5]]
+
+Depth: 5, Criteria: entropy, Max Feature: auto, Weight: None
+[5, 'entropy', 'auto', 'None'],
+Great crested newt: 81.53846153846153
+[[51  1]
+ [11  2]]
+
+Depth: 5, Criteria: entropy, Max Feature: auto, Weight: balanced
+[5, 'entropy', 'auto', 'balanced'],
+Great crested newt: 75.38461538461539
+[[46  6]
+ [10  3]]
+
+Depth: 5, Criteria: entropy, Max Feature: sqrt, Weight: None
+[5, 'entropy', 'sqrt', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 5, Criteria: entropy, Max Feature: sqrt, Weight: balanced
+[5, 'entropy', 'sqrt', 'balanced'],
+Great crested newt: 70.76923076923077
+[[39 13]
+ [ 6  7]]
+
+Depth: 5, Criteria: entropy, Max Feature: log2, Weight: None
+[5, 'entropy', 'log2', 'None'],
+Great crested newt: 80.0
+[[52  0]
+ [13  0]]
+
+Depth: 5, Criteria: entropy, Max Feature: log2, Weight: balanced
+[5, 'entropy', 'log2', 'balanced'],
+Great crested newt: 67.6923076923077
+[[39 13]
+ [ 8  5]]
+

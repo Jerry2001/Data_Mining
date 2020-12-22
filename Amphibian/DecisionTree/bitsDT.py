@@ -15,6 +15,7 @@ attribute = ["Water Reservoir Surface", "Number of Reservoir", "Type of Reservoi
 fileLabel =["gf", "bf", "ct", "ft", "tf", "cn", "gn"]
 label = ("Green frog", "Brown frog", "Common toad", "Fire-bellied toad", "Tree frog", "Common newt", "Great crested newt")
 
+stdout = open('bintree.txt', 'w')
 
 def accuracyCalc(label, predict):
 	match = 0

@@ -82,25 +82,41 @@ def analTree(tree, nodePath, classIndex):
 			(i, totalMisclassify[i], totalNode[i]), end = ' ')
 		if(totalNode[i] > 0): print("- Accuracy: %.3f" % (100.0 - (totalMisclassify[i] * 1.0 / totalNode[i] * 100.0)))		
 		else: print()
-for index in range(7):
-	treeClassifier = tree.DecisionTreeClassifier(max_depth = 4)
-	treeClassifier = treeClassifier.fit(attributeTrain, labelTrain[index])
-	labelPredict = treeClassifier.predict(attributeTest)
-	totalAccuracy += accuracy_score(labelTest[index], labelPredict) * 100
-	print(label[index], end = ": ")
-	print(accuracy_score(labelTest[index], labelPredict) * 100)
-	diagramClass = ["Not " + label[index], label[index]]
-	file = fileLabel[index] + ".dot"
-	print(confusion_matrix(labelTest[index], labelPredict, labels = [0, 1]))
-	
-	#tree.export_graphviz(treeClassifier, out_file=file, feature_names = attribute, class_names = diagramClass, filled=True, rounded=True, special_characters=True)
-	#call(['dot', '-Tpng', file, '-o', label[index] + '.png', '-Gdpi=600'])
-	
-	#labelPredict = treeClassifier.predict(attributeTrain)
-	#print("*" + str(accuracy_score(labelTrain[index], labelPredict) * 100))
 
-	#analTree(treeClassifier, treeClassifier.decision_path(attributeTest), index)
-	print()
+stdout = open('bintree.txt', 'w')
+	
+depths = [None, 2, 3, 4, 5]
+crits = ["gini", "entropy"]
+maxFeatures = [None, "auto", "sqrt", "log2"]
+weights = [None, "balanced"]
+for index in range(6, 7):
+	for depth_ in depths:
+		for crit_ in crits:
+			for maxFeature_ in maxFeatures:
+				for weight_ in weights:
+					print("Depth: %s, Criteria: %s, Max Feature: %s, Weight: %s"%(depth_, crit_, maxFeature_, weight_), file = stdout)
+					print("[%s, '%s', '%s', '%s'],"%(depth_, crit_, maxFeature_, weight_), file = stdout)
+					treeClassifier = tree.DecisionTreeClassifier(criterion = crit_,max_depth = depth_, max_features = maxFeature_, class_weight = weight_)
+					treeClassifier = treeClassifier.fit(attributeTrain, labelTrain[index])
+					labelPredict = treeClassifier.predict(attributeTest)
+					totalAccuracy += accuracy_score(labelTest[index], labelPredict) * 100
+					print(label[index], end = ": ", file = stdout)
+					print(accuracy_score(labelTest[index], labelPredict) * 100, file = stdout)
+					diagramClass = ["Not " + label[index], label[index]]
+					file = fileLabel[index] + ".dot"
+					print(confusion_matrix(labelTest[index], labelPredict, labels = [0, 1]), file = stdout)
+					
+					#tree.export_graphviz(treeClassifier, out_file=file, feature_names = attribute, class_names = diagramClass, filled=True, rounded=True, special_characters=True)
+					#call(['dot', '-Tpng', file, '-o', label[index] + '.png', '-Gdpi=600'])
+					
+					#labelPredict = treeClassifier.predict(attributeTrain)
+					#print("*" + str(accuracy_score(labelTrain[index], labelPredict) * 100))
+
+					#analTree(treeClassifier, treeClassifier.decision_path(attributeTest), index)
+					print(file = stdout)
 
 totalAccuracy /= 7
 print("Average accuracy: " + str(totalAccuracy))
+
+
+cherry = [[None, 'entropy', 'log2', 'None'],[None, 'gini', 'log2', 'balanced'],[2, 'entropy', 'log2', 'None'],[None, 'entropy', 'sqrt', 'None'],[5, 'entropy', 'auto', 'balanced'],[3, 'entropy', 'auto', 'balanced'],[None, 'entropy', 'log2', 'None']]
