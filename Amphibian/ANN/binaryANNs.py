@@ -57,7 +57,7 @@ for index in range(0, 7):
 	print(label[index], end = ": ")
 	print(accuracy_score(labelTest[index], labelPredict) * 100)
 	print(confusion_matrix(labelTest[index], labelPredict, labels = [0, 1]))
-	print(file = stdout)
+	print()
 
 totalAccuracy /= 7
 print("Average accuracy: " + str(totalAccuracy))

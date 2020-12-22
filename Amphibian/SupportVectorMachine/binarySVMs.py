@@ -23,6 +23,8 @@ for column in (trainData.columns):
 	trainData[column] = trainData[column].apply(lambda x: (x*1.0 - trainData[column].min()) / 
 		(trainData[column].max() - trainData[column].min()))
 
+stdout = open('SVM.txt', 'w')
+
 #Get the label of the species and the site attributes of each instance in the training set
 attributeTrain = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in trainData.itertuples())
 labelTrain = []
@@ -55,10 +57,11 @@ labelTest.append(list((row._20) for row in testData.itertuples()))
 labelTest.append(list((row._21) for row in testData.itertuples()))
 totalAccuracy = 0.0
 
+cherry = [['poly', 8, 1000, 'balanced'],['poly', 3, 9, None],['rbf', 3, 1, None],['poly', 8, 1, None],['poly', 3, 4, 'balanced'],['rbf', 3, 1, 'balanced'],['rbf', 3, 2, 'balanced']]
+
 #Loop through 7 species and create a SVM in each iteration
-for index in range(7):
-	#Train the SVM and get the prediction
-	svmClassifier = svm.SVC(C = 4, degree = 3)
+for index in range(0,7):
+	svmClassifier = svm.SVC(C = cherry[index][2], kernel = cherry[index][0], degree = cherry[index][1], class_weight = cherry[index][3])
 	svmClassifier = svmClassifier.fit(attributeTrain, labelTrain[index])
 	labelPredict = svmClassifier.predict(attributeTest)
 
