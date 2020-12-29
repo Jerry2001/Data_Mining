@@ -6,6 +6,7 @@ from sklearn.neural_network import MLPClassifier
 import sys
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
+from sklearn.model_selection import KFold
 
 sys.path.append("../ANN")
 sys.path.append("../DecisionTree")
@@ -38,6 +39,8 @@ def accuracyCalc(label, predict):
 		print(confusion_matrix(confusion_label[i][0], confusion_label[i][1], labels = ["0", "1"]))
 		print()
 	return (match * 1.0 / (len(label) * 7))
+
+kf = KFold(n_splits=5)
 
 attributeTrain, attributeTest, labelTrain, labelTest = train_test_split(trainData.iloc[:, :-1], trainData.iloc[:, -1:], test_size = 0.2, random_state=0) 
 for label in attributeTrain.columns[-6:]:
@@ -75,5 +78,4 @@ predictLabel = bayesClassifier.predict(attributeTestMeta)
 
 testData = pd.read_csv("../Dataset/binarytest.csv", delimiter=",") 
 labelTestFinal = [(row.label) for row in testData.itertuples()]
-
-print(accuracyCalc(labelTestFinal, predictLabel))
+#print(accuracyCalc(labelTestFinal, predictLabel))
