@@ -7,10 +7,23 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report 
 from sklearn.metrics import confusion_matrix
 
+toReturnMeta = pd.DataFrame()
 toReturn = pd.DataFrame()
 
-def returnPredict():
+def returnPredictMeta():
 	validationAccuracy()
+	return toReturnMeta
+
+def returnPredict(attributeTrain, labelTrain, attributeTest):
+	labelPredict = []
+	fileLabel =["gf", "bf", "ct", "ft", "tf", "cn", "gn"]
+	cherry = [['poly', 8, 1000, 'balanced'],['poly', 3, 9, None],['rbf', 3, 1, None],['poly', 8, 1, None],['poly', 3, 4, 'balanced'],['rbf', 3, 1, 'balanced'],['rbf', 3, 2, 'balanced']]
+
+	for index in range(0, 7):
+		svmClassifier = svm.SVC(C = cherry[index][2], kernel = cherry[index][0], degree = cherry[index][1], class_weight = cherry[index][3])
+		svmClassifier = svmClassifier.fit(attributeTrain, labelTrain.iloc[:, index])
+		labelPredict = svmClassifier.predict(attributeTest)
+		toReturn.insert(len(toReturn.columns), 'SVM' + fileLabel[index], labelPredict)
 	return toReturn
 
 def validationAccuracy():
@@ -72,23 +85,23 @@ def validationAccuracy():
 		svmClassifier = svmClassifier.fit(attributeTrain, labelTrain[index])
 		labelPredict = svmClassifier.predict(attributeTest)
 
-		toReturn.insert(len(toReturn.columns), 'SVM' + fileLabel[index], labelPredict)
+		toReturnMeta.insert(len(toReturnMeta.columns), 'SVM' + fileLabel[index], labelPredict)
 
-		#Add the accuracy to the total accuracy and print out the accuracy for the current SVM
+		#Add the accuracy to the total accuracy and #print out the accuracy for the current SVM
 		totalAccuracy += accuracy_score(labelTest[index], labelPredict) * 100
-		print(label[index], end = ": ")
-		print(accuracy_score(labelTest[index], labelPredict) * 100)
+		#print(label[index], end = ": ")
+		#print(accuracy_score(labelTest[index], labelPredict) * 100)
 
 		#Cast the label to int to create the confusion matrix 
 		labelTest[index] = list(map(lambda a: int(a), labelTest[index]))
 		labelPredict = list(map(lambda a: int(a), labelPredict))
-		print(confusion_matrix(labelTest[index], labelPredict, labels = [0, 1]))
+		#print(confusion_matrix(labelTest[index], labelPredict, labels = [0, 1]))
 
 		#Test the model with training data
-		#print(labelTest[index], labelPredict)
-		#print(confusion_matrix(labelTrain[index], list(map(lambda a: int(a), svmClassifier.predict(attributeTrain))), labels = [0, 1]))
-		print()
+		##print(labelTest[index], labelPredict)
+		##print(confusion_matrix(labelTrain[index], list(map(lambda a: int(a), svmClassifier.predict(attributeTrain))), labels = [0, 1]))
+		#print()
 
 	#Get the average accuracy for 7 SVMs
 	totalAccuracy /= 7
-	print("Average accuracy: " + str(totalAccuracy))
+	#print("Average accuracy: " + str(totalAccuracy))

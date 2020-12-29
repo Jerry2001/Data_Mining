@@ -6,10 +6,23 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report 
 from sklearn.metrics import confusion_matrix 
 
+toReturnMeta = pd.DataFrame()
 toReturn = pd.DataFrame()
 
-def returnPredict():
+def returnPredictMeta():
 	validationAccuracy()
+	return toReturnMeta
+
+def returnPredict(attributeTrain, labelTrain, attributeTest):
+	labelPredict = []
+	fileLabel =["gf", "bf", "ct", "ft", "tf", "cn", "gn"]
+	cherry = [[5, 'gini', 'auto', None],[5, 'entropy', 'sqrt', None],[5, 'entropy', 'log2', 'balanced'],[None, 'gini', 'sqrt', 'balanced'],[None, 'gini', 'sqrt', 'balanced'],[2, 'gini', None, 'balanced'],[4, 'entropy', None, 'balanced']]
+
+	for index in range(0, 7):
+		treeClassifier = tree.DecisionTreeClassifier(criterion = cherry[index][1],max_depth = cherry[index][0], max_features = cherry[index][2], class_weight = cherry[index][3], random_state=0)
+		treeClassifier = treeClassifier.fit(attributeTrain, labelTrain.iloc[:, index])
+		labelPredict = treeClassifier.predict(attributeTest)
+		toReturn.insert(len(toReturn.columns), 'DT' + fileLabel[index], labelPredict)
 	return toReturn
 	
 def validationAccuracy():
@@ -51,25 +64,25 @@ def validationAccuracy():
 		treeClassifier = tree.DecisionTreeClassifier(criterion = cherry[index][1],max_depth = cherry[index][0], max_features = cherry[index][2], class_weight = cherry[index][3], random_state=0)
 		treeClassifier = treeClassifier.fit(attributeTrain, labelTrain[index])
 		labelPredict = treeClassifier.predict(attributeTest)
-		toReturn.insert(len(toReturn.columns), 'DT' + fileLabel[index], labelPredict)
+		toReturnMeta.insert(len(toReturnMeta.columns), 'DT' + fileLabel[index], labelPredict)
 		totalAccuracy += accuracy_score(labelTest[index], labelPredict) * 100
-		print(label[index], end = ": ")
-		print(accuracy_score(labelTest[index], labelPredict) * 100)
+		#print(label[index], end = ": ")
+		#print(accuracy_score(labelTest[index], labelPredict) * 100)
 		diagramClass = ["Not " + label[index], label[index]]
 		file = fileLabel[index] + ".dot"
-		print(confusion_matrix(labelTest[index], labelPredict, labels = [0, 1]))
+		#print(confusion_matrix(labelTest[index], labelPredict, labels = [0, 1]))
 		
 		#tree.export_graphviz(treeClassifier, out_file=file, feature_names = attribute, class_names = diagramClass, filled=True, rounded=True, special_characters=True)
 		#call(['dot', '-Tpng', file, '-o', label[index] + '.png', '-Gdpi=600'])
 		
 		#labelPredict = treeClassifier.predict(attributeTrain)
-		#print("*" + str(accuracy_score(labelTrain[index], labelPredict) * 100))
+		##print("*" + str(accuracy_score(labelTrain[index], labelPredict) * 100))
 
 		#analTree(treeClassifier, treeClassifier.decision_path(attributeTest), index)
-		print()
+		#print()
 
 	totalAccuracy /= 7
-	print("Average accuracy: " + str(totalAccuracy))
+	#print("Average accuracy: " + str(totalAccuracy))
 
 def analTree(tree, nodePath, classIndex):
 	global labelPredict
@@ -91,9 +104,9 @@ def analTree(tree, nodePath, classIndex):
 	'''
 	for i in range(numNode):
 	    if isLeaf[i]:
-	        print("%snode=%s leaf node." % (nodeDepth[i] * "\t", i))
+	        #print("%snode=%s leaf node." % (nodeDepth[i] * "\t", i))
 	    else:
-	        print("%snode=%s test node: go to node %s if X[:, %s] <= %s else to "
+	        #print("%snode=%s test node: go to node %s if X[:, %s] <= %s else to "
 	              "node %s."
 	              % (nodeDepth[i] * "\t",
 	                 i,
