@@ -6,37 +6,70 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report 
 from sklearn.metrics import confusion_matrix 
 
-labelPredict = []
-attribute = ["Water Reservoir Surface", "Number of Reservoir", "Type of Reservoir", "Presence of Vegetation", "The Most Dominant Land Type"
-, "The Second Most Dominant Land Type", "The Third Most Dominant Land Type", "Use of Water Reservoir", "Presence of Fishing", "Precentage Access to Undeveloped Area"
-, "Minimum Distance to Road", "Minimum Distance to Building", "Maintenance Status of Reservoir", "Type of Shore"]
+toReturn = pd.DataFrame()
 
-fileLabel =["gf", "bf", "ct", "ft", "tf", "cn", "gn"]
-label = ("Green frog", "Brown frog", "Common toad", "Fire-bellied toad", "Tree frog", "Common newt", "Great crested newt")
-trainData = pd.read_csv("../Dataset/preprocesstrain.csv", delimiter=",") 
+def returnPredict():
+	validationAccuracy()
+	return toReturn
+	
+def validationAccuracy():
+	labelPredict = []
+	attribute = ["Water Reservoir Surface", "Number of Reservoir", "Type of Reservoir", "Presence of Vegetation", "The Most Dominant Land Type"
+	, "The Second Most Dominant Land Type", "The Third Most Dominant Land Type", "Use of Water Reservoir", "Presence of Fishing", "Precentage Access to Undeveloped Area"
+	, "Minimum Distance to Road", "Minimum Distance to Building", "Maintenance Status of Reservoir", "Type of Shore"]
 
-attributeTrain = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in trainData.itertuples())
-labelTrain = []
-labelTrain.append(list((row._15) for row in trainData.itertuples()))
-labelTrain.append(list((row._16) for row in trainData.itertuples()))
-labelTrain.append(list((row._17) for row in trainData.itertuples()))
-labelTrain.append(list((row._18) for row in trainData.itertuples()))
-labelTrain.append(list((row._19) for row in trainData.itertuples()))
-labelTrain.append(list((row._20) for row in trainData.itertuples()))
-labelTrain.append(list((row._21) for row in trainData.itertuples()))
+	fileLabel =["gf", "bf", "ct", "ft", "tf", "cn", "gn"]
+	label = ("Green frog", "Brown frog", "Common toad", "Fire-bellied toad", "Tree frog", "Common newt", "Great crested newt")
+	trainData = pd.read_csv("../Dataset/preprocesstrain.csv", delimiter=",") 
 
-testData = pd.read_csv("../Dataset/preprocesstest.csv", delimiter=",") 
+	attributeTrain = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in trainData.itertuples())
+	labelTrain = []
+	labelTrain.append(list((row._15) for row in trainData.itertuples()))
+	labelTrain.append(list((row._16) for row in trainData.itertuples()))
+	labelTrain.append(list((row._17) for row in trainData.itertuples()))
+	labelTrain.append(list((row._18) for row in trainData.itertuples()))
+	labelTrain.append(list((row._19) for row in trainData.itertuples()))
+	labelTrain.append(list((row._20) for row in trainData.itertuples()))
+	labelTrain.append(list((row._21) for row in trainData.itertuples()))
 
-attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
-labelTest = []
-labelTest.append(list((row._15) for row in testData.itertuples()))
-labelTest.append(list((row._16) for row in testData.itertuples()))
-labelTest.append(list((row._17) for row in testData.itertuples()))
-labelTest.append(list((row._18) for row in testData.itertuples()))
-labelTest.append(list((row._19) for row in testData.itertuples()))
-labelTest.append(list((row._20) for row in testData.itertuples()))
-labelTest.append(list((row._21) for row in testData.itertuples()))
-totalAccuracy = 0.0
+	testData = pd.read_csv("../Dataset/preprocesstest.csv", delimiter=",") 
+
+	attributeTest = list(([row.SR, row.NR, row.TR, row.VR, row.SUR1, row.SUR2, row.SUR3, row.UR, row.FR, row.OR, row.RR, row.BR, row.MR, row.CR]) for row in testData.itertuples())
+	labelTest = []
+	labelTest.append(list((row._15) for row in testData.itertuples()))
+	labelTest.append(list((row._16) for row in testData.itertuples()))
+	labelTest.append(list((row._17) for row in testData.itertuples()))
+	labelTest.append(list((row._18) for row in testData.itertuples()))
+	labelTest.append(list((row._19) for row in testData.itertuples()))
+	labelTest.append(list((row._20) for row in testData.itertuples()))
+	labelTest.append(list((row._21) for row in testData.itertuples()))
+	totalAccuracy = 0.0
+
+	cherry = [[5, 'gini', 'auto', None],[5, 'entropy', 'sqrt', None],[5, 'entropy', 'log2', 'balanced'],[None, 'gini', 'sqrt', 'balanced'],[None, 'gini', 'sqrt', 'balanced'],[2, 'gini', None, 'balanced'],[4, 'entropy', None, 'balanced']]
+
+	for index in range(0, 7):
+		treeClassifier = tree.DecisionTreeClassifier(criterion = cherry[index][1],max_depth = cherry[index][0], max_features = cherry[index][2], class_weight = cherry[index][3], random_state=0)
+		treeClassifier = treeClassifier.fit(attributeTrain, labelTrain[index])
+		labelPredict = treeClassifier.predict(attributeTest)
+		toReturn.insert(len(toReturn.columns), 'DT' + fileLabel[index], labelPredict)
+		totalAccuracy += accuracy_score(labelTest[index], labelPredict) * 100
+		print(label[index], end = ": ")
+		print(accuracy_score(labelTest[index], labelPredict) * 100)
+		diagramClass = ["Not " + label[index], label[index]]
+		file = fileLabel[index] + ".dot"
+		print(confusion_matrix(labelTest[index], labelPredict, labels = [0, 1]))
+		
+		#tree.export_graphviz(treeClassifier, out_file=file, feature_names = attribute, class_names = diagramClass, filled=True, rounded=True, special_characters=True)
+		#call(['dot', '-Tpng', file, '-o', label[index] + '.png', '-Gdpi=600'])
+		
+		#labelPredict = treeClassifier.predict(attributeTrain)
+		#print("*" + str(accuracy_score(labelTrain[index], labelPredict) * 100))
+
+		#analTree(treeClassifier, treeClassifier.decision_path(attributeTest), index)
+		print()
+
+	totalAccuracy /= 7
+	print("Average accuracy: " + str(totalAccuracy))
 
 def analTree(tree, nodePath, classIndex):
 	global labelPredict
@@ -83,28 +116,5 @@ def analTree(tree, nodePath, classIndex):
 		if(totalNode[i] > 0): print("- Accuracy: %.3f" % (100.0 - (totalMisclassify[i] * 1.0 / totalNode[i] * 100.0)))		
 		else: print()
 
-cherry = [[5, 'gini', 'auto', None],[5, 'entropy', 'sqrt', None],[5, 'entropy', 'log2', 'balanced'],[None, 'gini', 'sqrt', 'balanced'],[None, 'gini', 'sqrt', 'balanced'],[2, 'gini', None, 'balanced'],[4, 'entropy', None, 'balanced']]
 
-for index in range(0, 7):
-	treeClassifier = tree.DecisionTreeClassifier(criterion = cherry[index][1],max_depth = cherry[index][0], max_features = cherry[index][2], class_weight = cherry[index][3], random_state=0)
-	treeClassifier = treeClassifier.fit(attributeTrain, labelTrain[index])
-	labelPredict = treeClassifier.predict(attributeTest)
-	totalAccuracy += accuracy_score(labelTest[index], labelPredict) * 100
-	print(label[index], end = ": ")
-	print(accuracy_score(labelTest[index], labelPredict) * 100)
-	diagramClass = ["Not " + label[index], label[index]]
-	file = fileLabel[index] + ".dot"
-	print(confusion_matrix(labelTest[index], labelPredict, labels = [0, 1]))
-	
-	#tree.export_graphviz(treeClassifier, out_file=file, feature_names = attribute, class_names = diagramClass, filled=True, rounded=True, special_characters=True)
-	#call(['dot', '-Tpng', file, '-o', label[index] + '.png', '-Gdpi=600'])
-	
-	#labelPredict = treeClassifier.predict(attributeTrain)
-	#print("*" + str(accuracy_score(labelTrain[index], labelPredict) * 100))
-
-	#analTree(treeClassifier, treeClassifier.decision_path(attributeTest), index)
-	print()
-
-totalAccuracy /= 7
-print("Average accuracy: " + str(totalAccuracy))
 
