@@ -7,6 +7,8 @@ import sys
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 from sklearn.model_selection import KFold
+import warnings
+warnings.filterwarnings('ignore') 
 
 sys.path.append("../ANN")
 sys.path.append("../DecisionTree")
@@ -40,42 +42,45 @@ def accuracyCalc(label, predict):
 		print()
 	return (match * 1.0 / (len(label) * 7))
 
-kf = KFold(n_splits=5)
+kf = KFold(n_splits=6)
 
-attributeTrain, attributeTest, labelTrain, labelTest = train_test_split(trainData.iloc[:, :-1], trainData.iloc[:, -1:], test_size = 0.2, random_state=0) 
-for label in attributeTrain.columns[-6:]:
-	labelTrain[label] = attributeTrain[label]
-	labelTest[label] = attributeTest[label]
+count = 0
 
-attributeTrain.drop(columns=attributeTrain.columns[-6:], inplace = True)
-attributeTest.drop(columns=attributeTest.columns[-6:], inplace = True)
+for train_index, test_index in kf.split(trainData):
+	count += 1
+	if count != 3: continue
+	attributeTrain = trainData.copy().iloc[train_index, :]
+	attributeTest = trainData.copy().iloc[test_index, :]
+	labelTrain = attributeTrain.copy().iloc[:, -7:]  
+	labelTest = attributeTest.copy().iloc[:, -7:]
+	attributeTrain.drop(columns=attributeTrain.columns[-7:], inplace = True)
+	attributeTest.drop(columns=attributeTest.columns[-7:], inplace = True)
 
-labelTrain = labelTrain[trainData.columns[-7:]]
-labelTest = labelTest[trainData.columns[-7:]]
+	attributeTrainMeta = binarySVMs.returnPredict(attributeTrain, labelTrain, attributeTest)
+	attributeTrainMeta = pd.concat([attributeTrainMeta, binaryDTs.returnPredict(attributeTrain, labelTrain, attributeTest)], axis=1)
+	attributeTrainMeta = pd.concat([attributeTrainMeta, binaryANNs.returnPredict(attributeTrain, labelTrain, attributeTest)], axis=1)
+	#forLabel = pd.read_csv("../Dataset/preprocesstrain.csv", delimiter=",")
+	labelTest.reset_index(inplace = True)
 
-attributeTrainMeta = binarySVMs.returnPredict(attributeTrain, labelTrain, attributeTest)
-attributeTrainMeta = pd.concat([attributeTrainMeta, binaryDTs.returnPredict(attributeTrain, labelTrain, attributeTest)], axis=1)
-attributeTrainMeta = pd.concat([attributeTrainMeta, binaryANNs.returnPredict(attributeTrain, labelTrain, attributeTest)], axis=1)
-#forLabel = pd.read_csv("../Dataset/preprocesstrain.csv", delimiter=",")
-labelTest.reset_index(inplace = True)
+	attributeTestMeta = binarySVMs.returnPredictMeta()
 
-attributeTestMeta = binarySVMs.returnPredictMeta()
-attributeTestMeta = attributeTestMeta.astype(int)
-attributeTestMeta = pd.concat([attributeTestMeta, binaryDTs.returnPredictMeta()], axis=1)
-attributeTestMeta = pd.concat([attributeTestMeta, binaryANNs.returnPredictMeta()], axis=1)
+	attributeTestMeta = attributeTestMeta.astype(int)
+	attributeTestMeta = pd.concat([attributeTestMeta, binaryDTs.returnPredictMeta()], axis=1)
+	attributeTestMeta = pd.concat([attributeTestMeta, binaryANNs.returnPredictMeta()], axis=1)
 
-binLabel = []
-for index, row in labelTest.iterrows():
-	binLabel.append(str(row["Green frogs"]) + str(row["Brown frogs"]) + str(row["Common toad"]) + str(row["Fire-bellied toad"])
-	 + str(row["Tree frog"]) + str(row["Common newt"]) + str(row["Great crested newt"]))
 
-binTestLabel = pd.DataFrame()
-binTestLabel["label"] = binLabel
+	binLabel = []
+	for index, row in labelTest.iterrows():
+		binLabel.append(str(row["Green frogs"]) + str(row["Brown frogs"]) + str(row["Common toad"]) + str(row["Fire-bellied toad"])
+		 + str(row["Tree frog"]) + str(row["Common newt"]) + str(row["Great crested newt"]))
 
-bayesClassifier = GaussianNB()
-bayesClassifier = bayesClassifier.fit(attributeTrainMeta, binLabel)
-predictLabel = bayesClassifier.predict(attributeTestMeta)
+	binTestLabel = pd.DataFrame()
+	binTestLabel["label"] = binLabel
 
-testData = pd.read_csv("../Dataset/binarytest.csv", delimiter=",") 
-labelTestFinal = [(row.label) for row in testData.itertuples()]
-#print(accuracyCalc(labelTestFinal, predictLabel))
+	bayesClassifier = GaussianNB()
+	bayesClassifier = bayesClassifier.fit(attributeTrainMeta, binLabel)
+	predictLabel = bayesClassifier.predict(attributeTestMeta)
+	testData = pd.read_csv("../Dataset/binarytest.csv", delimiter=",") 
+	labelTestFinal = [(row.label) for row in testData.itertuples()]
+	print(accuracyCalc(labelTestFinal, predictLabel))
+	

@@ -11,14 +11,17 @@ toReturnMeta = pd.DataFrame()
 toReturn = pd.DataFrame()
 
 def returnPredictMeta():
+	global toReturnMeta
+	toReturnMeta = pd.DataFrame()
 	validationAccuracy()
 	return toReturnMeta
 
 def returnPredict(attributeTrain, labelTrain, attributeTest):
+	global toReturn
 	labelPredict = []
 	fileLabel =["gf", "bf", "ct", "ft", "tf", "cn", "gn"]
 	cherry = [['poly', 8, 1000, 'balanced'],['poly', 3, 9, None],['rbf', 3, 1, None],['poly', 8, 1, None],['poly', 3, 4, 'balanced'],['rbf', 3, 1, 'balanced'],['rbf', 3, 2, 'balanced']]
-
+	toReturn = pd.DataFrame()
 	for index in range(0, 7):
 		svmClassifier = svm.SVC(C = cherry[index][2], kernel = cherry[index][0], degree = cherry[index][1], class_weight = cherry[index][3])
 		svmClassifier = svmClassifier.fit(attributeTrain, labelTrain.iloc[:, index])

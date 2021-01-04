@@ -10,10 +10,14 @@ toReturnMeta = pd.DataFrame()
 toReturn = pd.DataFrame()
 
 def returnPredictMeta():
+	global toReturnMeta
+	toReturnMeta = pd.DataFrame()
 	validationAccuracy()
 	return toReturnMeta
 
 def returnPredict(attributeTrain, labelTrain, attributeTest):
+	global toReturn
+	toReturn = pd.DataFrame()
 	labelPredict = []
 	fileLabel =["gf", "bf", "ct", "ft", "tf", "cn", "gn"]
 	cherry = [[5, 'gini', 'auto', None],[5, 'entropy', 'sqrt', None],[5, 'entropy', 'log2', 'balanced'],[None, 'gini', 'sqrt', 'balanced'],[None, 'gini', 'sqrt', 'balanced'],[2, 'gini', None, 'balanced'],[4, 'entropy', None, 'balanced']]

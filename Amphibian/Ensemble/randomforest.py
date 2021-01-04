@@ -96,7 +96,7 @@ def validationAccuracy():
 
 	totalAccuracy = 0.0
 
-	treeClassifier = RandomForestClassifier(max_depth = 4, random_state = 0)
+	treeClassifier = RandomForestClassifier(max_depth = 4, random_state = 0 )
 	treeClassifier = treeClassifier.fit(attributeTrain, labelTrain)
 	labelPredict = treeClassifier.predict(attributeTest)
 	print("Accuracy", end = ": ")

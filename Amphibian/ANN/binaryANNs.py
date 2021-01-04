@@ -8,10 +8,14 @@ toReturnMeta = pd.DataFrame()
 toReturn = pd.DataFrame()
 
 def returnPredictMeta():
+	global toReturnMeta
+	toReturnMeta = pd.DataFrame()
 	validationAccuracy()
 	return toReturnMeta
 
 def returnPredict(attributeTrain, labelTrain, attributeTest):
+	global toReturn
+	toReturn = pd.DataFrame()
 	labelPredict = []
 	fileLabel =["gf", "bf", "ct", "ft", "tf", "cn", "gn"]
 	cherryPick = [[13, 7], [9, 4], [11, 11], [13, 7], [18, 17], [20, 18], [17, 12]]
