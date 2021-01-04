@@ -3,6 +3,8 @@ import numpy as np
 from sklearn.metrics import confusion_matrix 
 from sklearn.metrics import accuracy_score 
 from sklearn.neural_network import MLPClassifier
+import warnings
+warnings.filterwarnings('ignore') 
 
 toReturnMeta = pd.DataFrame()
 toReturn = pd.DataFrame()
@@ -81,10 +83,12 @@ def validationAccuracy():
 
 		toReturnMeta.insert(len(toReturnMeta.columns), 'ANN' + fileLabel[index], labelPredict)
 		totalAccuracy += accuracy_score(labelTest[index], labelPredict) * 100
-		#print(label[index], end = ": ")
-		#print(accuracy_score(labelTest[index], labelPredict) * 100)
-		#print(confusion_matrix(labelTest[index], labelPredict, labels = [0, 1]))
-		#print()
+		print(label[index], end = ": ")
+		print(accuracy_score(labelTest[index], labelPredict) * 100)
+		print(confusion_matrix(labelTest[index], labelPredict, labels = [0, 1]))
+		print()
 
 	totalAccuracy /= 7
-	#print("Average accuracy: " + str(totalAccuracy))
+	print("Average accuracy: " + str(totalAccuracy))
+
+validationAccuracy()

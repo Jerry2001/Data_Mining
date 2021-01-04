@@ -36,6 +36,7 @@ def accuracyCalc(label, predict):
 	for i in range(7):
 		print(("Green frog", "Brown frog", "Common toad", "Fire-bellied toad", "Tree frog", "Common newt", "Great crested newt")[i])
 		print(confusion_matrix(confusion_label[i][0], confusion_label[i][1], labels = ["0", "1"]))
+		print()
 	return (match * 1.0 / (len(label) * 7))
 
 def analTree(tree, nodePath):
@@ -96,7 +97,7 @@ def validationAccuracy():
 
 	totalAccuracy = 0.0
 
-	treeClassifier = RandomForestClassifier(max_depth = 4, random_state = 0 )
+	treeClassifier = RandomForestClassifier(max_depth = None, random_state = 6)
 	treeClassifier = treeClassifier.fit(attributeTrain, labelTrain)
 	labelPredict = treeClassifier.predict(attributeTest)
 	print("Accuracy", end = ": ")
